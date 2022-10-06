@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".AddStudentFragment">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:gravity="center_vertical">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/namelInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.45"
+                android:layout_height="wrap_content"
+                android:hint="Name"
+                android:orientation="vertical"
+                android:textColorHint="#c1c2c4"
+                app:boxBackgroundColor="#323232"
+                android:layout_marginStart="@dimen/_10sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+               >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:outlineAmbientShadowColor="@color/white"
+                    android:outlineSpotShadowColor="@color/white"
+                    android:textColor="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/surnameInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.45"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:hint="Surname"
+                android:orientation="vertical"
+                android:textColorHint="#c1c2c4"
+                app:boxBackgroundColor="#323232">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/surnameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:outlineAmbientShadowColor="@color/white"
+                    android:outlineSpotShadowColor="@color/white"
+                    android:textColor="@color/white" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cl"
+            android:layout_marginTop="12sp"
+            android:elevation="5dp"
+            android:hint="Email"
+            android:orientation="vertical"
+            android:textColorHint="#c1c2c4"
+            app:boxBackgroundColor="#323232">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:outlineAmbientShadowColor="@color/white"
+                android:outlineSpotShadowColor="@color/white"
+                android:textColor="@color/white" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnAdd"
+            android:layout_width="@dimen/_300sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_below="@id/emailInputLayout"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="@dimen/_30sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:background="@drawable/btnbackground"
+            android:fontFamily="@font/opensansnormal"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp"
+            app:spinning_bar_color="@color/white" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
