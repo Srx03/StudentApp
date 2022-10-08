@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/black"
+    android:background="@color/text_primary"
     tools:context=".AddStudentFragment">
 
 
@@ -24,26 +24,26 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/namelInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:layout_constraintWidth_default="percent"
-                app:layout_constraintWidth_percent="0.45"
                 android:layout_height="wrap_content"
-                android:hint="Name"
-                android:orientation="vertical"
-                android:textColorHint="#c1c2c4"
-                app:boxBackgroundColor="#323232"
                 android:layout_marginStart="@dimen/_10sdp"
+                android:hint="Name"
+                app:boxStrokeWidth="@dimen/_3sdp"
+                android:orientation="vertical"
+                android:textColorHint="@color/divider_2"
+                app:boxBackgroundColor="@color/text_primary"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-               >
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.45">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/nameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:outlineAmbientShadowColor="@color/white"
-                    android:outlineSpotShadowColor="@color/white"
-                    android:textColor="@color/white" />
+                    android:outlineAmbientShadowColor="@color/divider_2"
+                    android:outlineSpotShadowColor="@color/divider_2"
+                    android:textColor="@color/divider_2" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -51,32 +51,31 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/surnameInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                app:layout_constraintWidth_default="percent"
-                app:layout_constraintWidth_percent="0.45"
                 android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:hint="Surname"
                 android:orientation="vertical"
-                android:textColorHint="#c1c2c4"
-                app:boxBackgroundColor="#323232">
+                app:boxStrokeWidth="@dimen/_3sdp"
+                android:textColorHint="@color/divider_2"
+                app:boxBackgroundColor="@color/text_primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.45">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/surnameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
-                    android:outlineAmbientShadowColor="@color/white"
-                    android:outlineSpotShadowColor="@color/white"
-                    android:textColor="@color/white" />
+                    android:outlineAmbientShadowColor="@color/divider_2"
+                    android:outlineSpotShadowColor="@color/divider_2"
+                    android:textColor="@color/divider_2" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
         <com.google.android.material.textfield.TextInputLayout
@@ -85,29 +84,89 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/cl"
+            android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="12sp"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:elevation="5dp"
             android:hint="Email"
+            app:boxStrokeWidth="@dimen/_3sdp"
             android:orientation="vertical"
-            android:textColorHint="#c1c2c4"
-            app:boxBackgroundColor="#323232">
+            android:textColorHint="@color/divider_2"
+            app:boxBackgroundColor="@color/text_primary">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/emailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
-                android:outlineAmbientShadowColor="@color/white"
-                android:outlineSpotShadowColor="@color/white"
-                android:textColor="@color/white" />
+                android:outlineAmbientShadowColor="@color/divider_2"
+                android:outlineSpotShadowColor="@color/divider_2"
+                android:textColor="@color/divider_2" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/phoneInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/emailInputLayout"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="12sp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:elevation="5dp"
+            android:hint="Phone"
+            app:boxStrokeWidth="@dimen/_3sdp"
+            android:orientation="vertical"
+            android:textColorHint="@color/divider_2"
+            app:boxBackgroundColor="@color/text_primary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/phonelEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:outlineAmbientShadowColor="@color/divider_2"
+                android:outlineSpotShadowColor="@color/divider_2"
+                android:textColor="@color/divider_2" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/birthdayInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phoneInputLayout"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="12sp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:elevation="5dp"
+            android:hint="Birthday"
+            app:boxStrokeWidth="@dimen/_3sdp"
+            android:orientation="vertical"
+            android:textColorHint="@color/divider_2"
+            app:boxBackgroundColor="@color/text_primary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/birthdayEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="date"
+                android:outlineAmbientShadowColor="@color/divider_2"
+                android:outlineSpotShadowColor="@color/divider_2"
+                android:textColor="@color/divider_2" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAdd"
             android:layout_width="@dimen/_300sdp"
             android:layout_height="@dimen/_50sdp"
-            android:layout_below="@id/emailInputLayout"
+            android:layout_below="@id/birthdayInputLayout"
             android:layout_centerInParent="true"
             android:layout_marginTop="@dimen/_30sdp"
             android:layout_marginBottom="@dimen/_5sdp"
@@ -116,8 +175,7 @@
             android:text="Add"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15sdp"
-            app:spinning_bar_color="@color/white" />
+            android:textSize="@dimen/_15sdp" />
 
     </RelativeLayout>
 
