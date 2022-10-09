@@ -7,54 +7,78 @@
     android:orientation="vertical"
     tools:context=".HomeFragment">
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:id="@+id/btnAdd"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/welcome"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:text="Add new subject"
-        android:fontFamily="@font/opensansnormal"
-        android:backgroundTint="@color/main"
-        app:borderWidth="0dp"
-        android:layout_margin="@dimen/_10sdp" />
+        android:layout_marginTop="@dimen/_10sdp">
+
+        <TextView
+            android:id="@+id/tvWelcome"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_80sdp"
+            android:fontFamily="@font/opensansbold"
+            android:paddingStart="@dimen/_10sdp"
+            android:text="Welcome to your class guid"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_28sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.66" />
+
+        <ImageView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+
+            android:src="@drawable/img_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvWelcome"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <TextView
-        android:id="@+id/welcome"
-        android:layout_width="@dimen/_300sdp"
+        android:id="@+id/tvAddSubject"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_20sdp"
+        android:layout_below="@+id/welcome"
+        android:layout_marginTop="@dimen/_10sdp"
         android:fontFamily="@font/opensansbold"
         android:paddingStart="@dimen/_10sdp"
-        android:text="Welcome to your class guid"
+        android:text="Add subject"
         android:textColor="@color/black"
         android:textSize="@dimen/_30sdp" />
 
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutSubject"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_80sdp"
-        android:layout_below="@+id/welcome"
-        android:orientation="horizontal">
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAddSubject">
+
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/subjectInputLayout"
+            android:id="@+id/namelInputLayout"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="@dimen/_290sdp"
-            android:layout_height="@dimen/_60sdp"
-            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
             android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
-            android:hint="Email"
+            android:hint="Name"
+            app:boxStrokeWidth="@dimen/_3sdp"
             android:orientation="vertical"
             android:textColorHint="@color/divider_2"
             app:boxBackgroundColor="@color/text_primary"
-            app:boxStrokeWidth="@dimen/_3sdp">
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.70">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/subjectEditText"
+                android:id="@+id/nameEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
@@ -66,20 +90,23 @@
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnAddSubject"
-            android:layout_width="@dimen/_100sdp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:layout_gravity="center"
-            android:layout_marginEnd="@dimen/_10sdp"
             android:background="@drawable/btnbackground"
             android:fontFamily="@font/opensansnormal"
             android:text="Add"
             android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="@dimen/_15sdp" />
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_4sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/namelInputLayout"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

@@ -147,10 +147,10 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:elevation="5dp"
             android:hint="Birthday"
-            app:boxStrokeWidth="@dimen/_3sdp"
             android:orientation="vertical"
             android:textColorHint="@color/divider_2"
-            app:boxBackgroundColor="@color/text_primary">
+            app:boxBackgroundColor="@color/text_primary"
+            app:boxStrokeWidth="@dimen/_3sdp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/birthdayEditText"
