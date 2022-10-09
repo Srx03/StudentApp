@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_70sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        app:cardCornerRadius="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_5sdp"
+        android:layout_marginEnd="@dimen/_5sdp"
+        android:backgroundTint="@color/text_secondary">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvSubjectName"
+                android:layout_width="@dimen/_270sdp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/opensansbold"
+                android:gravity="center"
+                android:text="Uvod u računarstvo i informatiku"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_22sdp" />
+
+
+            <TextView
+                android:id="@+id/tvBroj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp"
+                android:layout_toEndOf="@+id/tvSubjectName"
+                android:fontFamily="@font/opensansnormal"
+                android:gravity="center"
+                android:text="Broj učenika"
+                android:textColor="@color/black_light"
+                android:textSize="@dimen/_16sdp" />
+
+            <TextView
+                android:id="@+id/tvNumber"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/tvBroj"
+                android:layout_toEndOf="@+id/tvSubjectName"
+                android:fontFamily="@font/opensansnormal"
+                android:gravity="center"
+                android:text="200"
+                android:textColor="@color/black_light"
+                android:textSize="@dimen/_20sdp" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+
+</RelativeLayout>
