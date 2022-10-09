@@ -7,37 +7,15 @@
     android:orientation="vertical"
     tools:context=".HomeFragment">
 
-    <com.google.android.material.appbar.AppBarLayout
-        android:id="@+id/app_bar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="@android:color/transparent"
-        android:layout_gravity="bottom"
-        android:layout_marginBottom="@dimen/_2sdp"
-        android:translationZ="@dimen/_100sdp">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:background="@android:color/transparent"
-            android:gravity="end"
-            android:paddingBottom="@dimen/_5sdp"
-            android:paddingHorizontal="@dimen/_8sdp"
-            app:layout_scrollFlags="noScroll">
-
-
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/btnAdd"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|right"
-                android:layout_marginStart="@dimen/_2sdp"
-                app:backgroundTint="@color/main"
-                app:icon="@drawable/ic_add" />
-
-        </RelativeLayout>
-
-    </com.google.android.material.appbar.AppBarLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_add"
+        android:backgroundTint="@color/main"
+        app:borderWidth="0dp"
+        android:layout_margin="@dimen/_10sdp" />
 
 
 
