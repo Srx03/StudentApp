@@ -1,14 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/text_primary"
     tools:context=".SubjectFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tvSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:fontFamily="@font/opensansbold"
+        android:gravity="center"
+        android:text="Uvod u računarstvo i informatiku"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_25sdp" />
+
+
+    <TextView
+        android:id="@+id/tvAddStudent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvSubject"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:fontFamily="@font/opensansbold"
+        android:paddingStart="@dimen/_10sdp"
+        android:text="Add student to subject"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_30sdp" />
+
+
+    <TextView
+        android:id="@+id/subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvAddStudent"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/opensansbold"
+        android:paddingStart="@dimen/_10sdp"
+        android:gravity="center"
+        android:text="Students in this subject"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_30sdp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recentRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subject"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_student_subjects" />
+
+
+</RelativeLayout>
