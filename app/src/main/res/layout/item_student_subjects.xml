@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="@dimen/_10sdp"
+    android:background="@color/text_primary"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
@@ -21,7 +22,6 @@
         android:id="@+id/tvEmail"
         android:layout_width="@dimen/_270sdp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/_5sdp"
         android:fontFamily="@font/opensansnormal"
         android:paddingHorizontal="@dimen/_10sdp"
         android:text="srdjan.djuric003@gmail.com"
@@ -36,7 +36,6 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/tvEmail"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/_5sdp"
         android:fontFamily="@font/opensansnormal"
         android:paddingHorizontal="@dimen/_10sdp"
         android:text="Januar 8, 2003"

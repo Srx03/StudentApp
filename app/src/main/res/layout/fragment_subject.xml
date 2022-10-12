@@ -21,27 +21,125 @@
         android:textSize="@dimen/_25sdp" />
 
 
-    <TextView
-        android:id="@+id/tvAddStudent"
+    <LinearLayout
+        android:id="@+id/layoutMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/tvSubject"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:fontFamily="@font/opensansbold"
-        android:paddingStart="@dimen/_10sdp"
-        android:text="Add student to subject"
-        android:textColor="@color/black"
-        android:textSize="@dimen/_30sdp" />
+        android:layout_below="@id/tvSubject"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_35sdp">
+
+            <ImageView
+                android:id="@+id/btnAddStudent"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_add_student_subject" />
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnAddStudent"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/opensansnormal"
+                android:gravity="center"
+                android:text="Add Student"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btnAddTest"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_add_test" />
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnAddTest"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/opensansnormal"
+                android:gravity="center"
+                android:text="Add Test"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layoutSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/layoutMenu"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@drawable/search_box_background"
+            android:hint="Search for student..."
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:visibility="visible"
+            android:textColor="@color/divider" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_student_subjects" />
+
+        <TextView
+            android:id="@+id/emptyStudentsList"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_138sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/opensansnormal"
+            android:gravity="center"
+            android:text="Add students to subject"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_25sdp"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
 
 
     <TextView
         android:id="@+id/subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/tvAddStudent"
+        android:layout_below="@id/layoutSearch"
         android:layout_marginTop="15dp"
         android:fontFamily="@font/opensansbold"
-        android:paddingStart="@dimen/_10sdp"
         android:gravity="center"
         android:text="Students in this subject"
         android:textColor="@color/black"
@@ -52,7 +150,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/subject"
-        android:layout_marginTop="0dp"
         android:layout_marginBottom="@dimen/_10sdp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_student_subjects" />

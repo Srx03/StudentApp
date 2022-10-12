@@ -8,13 +8,14 @@
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/drawable/add_selector.xml" value="0.125" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/drawable/btnbackground.xml" value="0.175" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/drawable/home_selector.xml" value="0.125" />
+        <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/drawable/search_box_bckgrnd.xml" value="0.175" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/drawable/search_selector.xml" value="0.125" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/font/font.xml" value="0.29635416666666664" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/fragment_add_student.xml" value="0.5" />
+        <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/fragment_add_student.xml" value="0.33" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/fragment_profile.xml" value="0.23177083333333334" />
-        <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/fragment_subject.xml" value="0.2" />
+        <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/fragment_subject.xml" value="0.22" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/item_student_subjects.xml" value="0.33" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/item_subject.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/menu/bottom_menu.xml" value="0.18802083333333333" />
