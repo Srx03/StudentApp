@@ -1,11 +1,17 @@
 package com.example.studentapp.models
 
-data class Subject(
-    var id: String,
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import org.jetbrains.annotations.NotNull
+
+@Entity(tableName = "subject_table")
+class Subject(
+   @PrimaryKey(autoGenerate = true)
+   var id: Int? = null,
     var subjectName: String,
-    var studentsInSubject: List<Student>,
+    var studentsInSubject: String,
     var number: String,
-    var testInSubject: List<Test>,
+    var testInSubject: String,
 
 
 

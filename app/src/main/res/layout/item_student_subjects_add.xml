@@ -46,7 +46,7 @@
         <ImageView
             android:layout_width="@dimen/_45sdp"
             android:layout_height="@dimen/_45sdp"
-            android:src="@drawable/ic_delete"
+            android:src="@drawable/ic_add_student_to_subject"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tvEmail"
