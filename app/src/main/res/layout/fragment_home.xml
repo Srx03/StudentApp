@@ -17,12 +17,13 @@
         <TextView
             android:id="@+id/tvWelcome"
             android:layout_width="0dp"
-            android:layout_height="@dimen/_80sdp"
+            android:layout_height="wrap_content"
             android:fontFamily="@font/opensansbold"
             android:paddingStart="@dimen/_10sdp"
             android:text="Welcome to your class guid"
             android:textColor="@color/black"
             android:textSize="@dimen/_28sdp"
+            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -52,7 +53,7 @@
         android:paddingStart="@dimen/_10sdp"
         android:text="Add subject"
         android:textColor="@color/black"
-        android:textSize="@dimen/_30sdp" />
+        android:textSize="@dimen/_25sdp" />
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -115,13 +116,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/layoutSubject"
-        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginTop="16dp"
         android:fontFamily="@font/opensansbold"
         android:paddingStart="@dimen/_10sdp"
         android:text="Your Subjects"
         android:textColor="@color/black"
-        android:textSize="@dimen/_30sdp" />
-
+        android:textSize="@dimen/_25sdp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/subjectRecyclerView"
