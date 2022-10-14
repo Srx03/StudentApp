@@ -21,7 +21,7 @@
             android:fontFamily="@font/opensansbold"
             android:paddingStart="@dimen/_10sdp"
             android:text="Welcome to your class guid"
-            android:textColor="@color/black"
+            android:textColor="@color/divider_2"
             android:textSize="@dimen/_28sdp"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -52,7 +52,7 @@
         android:fontFamily="@font/opensansbold"
         android:paddingStart="@dimen/_10sdp"
         android:text="Add subject"
-        android:textColor="@color/black"
+        android:textColor="@color/divider_2"
         android:textSize="@dimen/_25sdp" />
 
 
@@ -120,7 +120,7 @@
         android:fontFamily="@font/opensansbold"
         android:paddingStart="@dimen/_10sdp"
         android:text="Your Subjects"
-        android:textColor="@color/black"
+        android:textColor="@color/divider_2"
         android:textSize="@dimen/_25sdp" />
 
     <androidx.recyclerview.widget.RecyclerView

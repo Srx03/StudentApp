@@ -13,7 +13,7 @@
         android:fontFamily="@font/opensansbold"
         android:paddingHorizontal="@dimen/_10sdp"
         android:text="Srđan Đurić"
-        android:textColor="@color/black"
+        android:textColor="@color/divider_2"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="@dimen/_25sdp" />

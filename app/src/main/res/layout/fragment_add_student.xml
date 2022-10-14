@@ -14,6 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_20sdp">
 
+
         <TextView
             android:id="@+id/tvWelcome"
             android:layout_width="0dp"
@@ -21,7 +22,7 @@
             android:fontFamily="@font/opensansbold"
             android:paddingStart="@dimen/_10sdp"
             android:text="Add students to your class or check for tests"
-            android:textColor="@color/black"
+            android:textColor="@color/divider_2"
             android:textSize="@dimen/_25sdp"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -50,6 +51,17 @@
         android:layout_marginTop="@dimen/_15sdp"
         android:orientation="vertical">
 
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+           android:gravity="center"
+            android:fontFamily="@font/opensansnormal"
+            android:text="Hold to delete test"
+            android:textColor="@color/divider_2"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"

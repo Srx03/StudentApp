@@ -14,7 +14,7 @@
         app:cardCornerRadius="@dimen/_10sdp"
         android:layout_marginStart="@dimen/_10sdp"
         android:layout_marginEnd="@dimen/_10sdp"
-        android:backgroundTint="@color/text_secondary">
+        android:backgroundTint="@color/bottom">
 
         <RelativeLayout
             android:layout_width="wrap_content"
@@ -27,7 +27,7 @@
                 android:fontFamily="@font/opensansbold"
                 android:gravity="center"
                 android:text="Uvod u računarstvo i informatiku"
-                android:textColor="@color/black"
+                android:textColor="@color/divider_2"
                 android:textSize="@dimen/_22sdp" />
 
 
@@ -40,7 +40,7 @@
                 android:fontFamily="@font/opensansnormal"
                 android:gravity="center"
                 android:text="Broj učenika"
-                android:textColor="@color/black_light"
+                android:textColor="@color/divider_2"
                 android:textSize="@dimen/_16sdp" />
 
             <TextView
@@ -52,7 +52,7 @@
                 android:fontFamily="@font/opensansnormal"
                 android:gravity="center"
                 android:text="200"
-                android:textColor="@color/black_light"
+                android:textColor="@color/divider_2"
                 android:textSize="@dimen/_20sdp" />
 
         </RelativeLayout>
