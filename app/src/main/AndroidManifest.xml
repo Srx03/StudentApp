@@ -4,6 +4,7 @@
     package="com.example.studentapp">
 
     <application
+        android:name=".di.application.StudentApplication"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"

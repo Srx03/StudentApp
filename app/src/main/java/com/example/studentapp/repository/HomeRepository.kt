@@ -7,5 +7,6 @@ interface HomeRepository {
 
     fun getAllSubjects(): LiveData<List<Subject>>
     suspend fun deleteSubject(id: String)
+    suspend fun addSubject(subject: Subject)
 
 }

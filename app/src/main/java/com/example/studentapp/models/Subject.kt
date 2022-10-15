@@ -8,10 +8,8 @@ import org.jetbrains.annotations.NotNull
 class Subject(
    @PrimaryKey(autoGenerate = true)
    var id: Int? = null,
-    var subjectName: String,
-    var studentsInSubject: String,
-    var number: String,
-    var testInSubject: String,
+    var subjectName: String
+
 
 
 

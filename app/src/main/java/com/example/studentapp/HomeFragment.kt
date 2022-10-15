@@ -1,19 +1,27 @@
 package com.example.studentapp
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.example.studentapp.databinding.FragmentHomeBinding
+import com.example.studentapp.models.Subject
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
 
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
+
+    private val  viewModel: HomeViewModel by activityViewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,8 +40,14 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btnAddSubject.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_subjectFragment)
-            Toast.makeText(context, "Yes", Toast.LENGTH_SHORT).show()
+
+            val subject = Subject(
+                0,
+                binding.nameEditText.text.toString()
+            )
+
+            viewModel.addSubject(subject)
+            Log.d("test", subject.toString())
         }
 
 
