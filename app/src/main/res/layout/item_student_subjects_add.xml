@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:background="@color/text_primary"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/tvStudentName"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensansbold"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:text="Srđan Đurić"
+        android:textColor="@color/divider_2"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="@dimen/_25sdp" />
+
+    <TextView
+        android:id="@+id/tvEmail"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/opensansnormal"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:text="srdjan.djuric003@gmail.com"
+        app:layout_constraintTop_toBottomOf="@id/tvStudentName"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/divider_2"
+        android:textSize="@dimen/_13sdp" />
+
+    <TextView
+        android:id="@+id/tvBirthday"
+        android:layout_width="@dimen/_300sdp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tvEmail"
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="@font/opensansnormal"
+        android:paddingHorizontal="@dimen/_10sdp"
+        android:text="Januar 8, 2003"
+        android:textColor="@color/divider_2"
+        android:textSize="@dimen/_13sdp" />
+
+
+        <ImageView
+            android:layout_width="@dimen/_45sdp"
+            android:layout_height="@dimen/_45sdp"
+            android:src="@drawable/ic_add_student_to_subject"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tvEmail"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

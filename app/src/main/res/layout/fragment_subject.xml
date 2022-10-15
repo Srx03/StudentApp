@@ -1,14 +1,267 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/text_primary"
     tools:context=".SubjectFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/tvSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:fontFamily="@font/opensansbold"
+        android:gravity="center"
+        android:text="Uvod u računarstvo i informatiku"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_25sdp" />
+
+
+    <LinearLayout
+        android:id="@+id/layoutMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:orientation="horizontal">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_35sdp">
+
+            <ImageView
+                android:id="@+id/btnAddStudent"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_add_student_subject" />
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnAddStudent"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/opensansnormal"
+                android:gravity="center"
+                android:text="Add Student"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/btnAddTest"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:src="@drawable/ic_add_test" />
+
+            <TextView
+                android:layout_width="65dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/btnAddTest"
+                android:layout_marginTop="@dimen/_3sdp"
+                android:fontFamily="@font/opensansnormal"
+                android:gravity="center"
+                android:text="Add Test"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp"/>
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layoutSearch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:visibility="visible"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/etSearch"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@drawable/search_box_background"
+            android:hint="Search for student..."
+            android:paddingStart="15dp"
+            android:paddingEnd="15dp"
+            android:visibility="visible"
+            android:textColor="@color/divider" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/allStudentRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_student_subjects_add" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/searchRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_170sdp"
+            android:layout_marginTop="@dimen/_6sdp"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/item_student_subjects_add" />
+
+        <TextView
+            android:id="@+id/emptyStudentsList"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_138sdp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:fontFamily="@font/opensansnormal"
+            android:gravity="center"
+            android:text="Add students to subject"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_25sdp"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutAddTest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:visibility="gone"
+        android:orientation="vertical">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/testNameInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/cl"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:elevation="5dp"
+            android:hint="Enter test name..."
+            app:boxStrokeWidth="@dimen/_3sdp"
+            android:orientation="vertical"
+            android:textColorHint="@color/divider_2"
+            app:boxBackgroundColor="@color/text_primary">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/testNameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:outlineAmbientShadowColor="@color/divider_2"
+                android:outlineSpotShadowColor="@color/divider_2"
+                android:textColor="@color/divider_2" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dateInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:hint="Date"
+                android:orientation="vertical"
+                android:textColorHint="@color/divider_2"
+                app:boxBackgroundColor="@color/text_primary"
+                app:boxStrokeWidth="@dimen/_3sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.45">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:outlineAmbientShadowColor="@color/divider_2"
+                    android:outlineSpotShadowColor="@color/divider_2"
+                    android:textColor="@color/divider_2" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/timeInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_10sdp"
+                android:hint="Time"
+                android:orientation="vertical"
+                android:textColorHint="@color/divider_2"
+                app:boxBackgroundColor="@color/text_primary"
+                app:boxStrokeWidth="@dimen/_3sdp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_default="percent"
+                app:layout_constraintWidth_percent="0.45">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/surnameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="text"
+                    android:outlineAmbientShadowColor="@color/divider_2"
+                    android:outlineSpotShadowColor="@color/divider_2"
+                    android:textColor="@color/divider_2" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/subject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:fontFamily="@font/opensansbold"
+        android:gravity="center"
+        android:text="Students in this subject"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_30sdp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recentRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/_10sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/item_student_subjects" />
+
+
+</LinearLayout>
