@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.studentapp.databinding.FragmentHomeBinding
 import com.example.studentapp.models.Subject
 import dagger.hilt.android.AndroidEntryPoint
@@ -20,6 +21,7 @@ class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
+    private lateinit var subjectAdapter: SubjectAdapter
     private val  viewModel: HomeViewModel by activityViewModels()
 
 
@@ -42,16 +44,45 @@ class HomeFragment : Fragment() {
         binding.btnAddSubject.setOnClickListener {
 
             val subject = Subject(
-                0,
+                1,
                 binding.nameEditText.text.toString()
             )
 
             viewModel.addSubject(subject)
             Log.d("test", subject.toString())
+
+            subjectAdapter.setOnSubjectClick {
+                viewModel.deleteSubject(it.id.toString())
+            }
+
         }
 
 
+
+        viewModel.getAllSubjects().observe(viewLifecycleOwner){
+
+            subjectAdapter.setList(it)
+
+            Log.d("testovka", it.toString())
+
+        }
+
+
+        setupRecyclerView()
+
     }
+
+    fun setupRecyclerView(){
+        subjectAdapter = SubjectAdapter()
+
+        binding.subjectRecyclerView.apply {
+            adapter = subjectAdapter
+            layoutManager = LinearLayoutManager(context,  LinearLayoutManager.VERTICAL, false)
+        }
+
+    }
+
+
 
 
     override fun onDestroyView() {

@@ -4,13 +4,11 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import org.jetbrains.annotations.NotNull
 
-@Entity(tableName = "subject_table")
-class Subject(
+@Entity
+data class Subject(
    @PrimaryKey(autoGenerate = true)
-   var id: Int? = null,
+   var subjectId: Int? = null,
     var subjectName: String
-
-
 
 
 )

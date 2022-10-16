@@ -14,10 +14,10 @@ interface SubjectDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addSubject(subject: Subject?)
 
-    @Query("DELETE FROM subject_table WHERE id = :subjectId")
+    @Query("DELETE FROM subject WHERE subjectId = :subjectId")
     suspend fun  deleteSubject(subjectId: String?)
 
-    @Query("SELECT * FROM subject_table")
+    @Query("SELECT * FROM subject")
     fun getAllSubject(): LiveData<List<Subject>>
 
 }

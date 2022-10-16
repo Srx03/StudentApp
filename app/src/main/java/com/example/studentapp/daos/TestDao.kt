@@ -15,10 +15,10 @@ interface TestDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addTest(test: Test?)
 
-    @Query("DELETE FROM test_table WHERE id = :testId")
+    @Query("DELETE FROM test WHERE testId = :testId")
     suspend fun  deleteTest(testId: String?)
 
-    @Query("SELECT * FROM test_table")
+    @Query("SELECT * FROM test")
     fun getAllTests(): LiveData<List<Test>>
 
 }
