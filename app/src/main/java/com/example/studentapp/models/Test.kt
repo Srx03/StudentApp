@@ -8,5 +8,5 @@ data class Test(
     @PrimaryKey(autoGenerate = true)
     var testId: Int? = null,
     var name: String,
-    var subjectId: String
+
 )
