@@ -15,7 +15,7 @@ interface SubjectDao {
     suspend fun addSubject(subject: Subject?)
 
     @Query("DELETE FROM subject WHERE subjectId = :subjectId")
-    suspend fun  deleteSubject(subjectId: String?)
+    suspend fun  deleteSubject(subjectId: Int)
 
     @Query("SELECT * FROM subject")
     fun getAllSubject(): LiveData<List<Subject>>

@@ -3,17 +3,19 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:backgroundTint="@color/text_primary"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
 
 <androidx.cardview.widget.CardView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginTop="@dimen/_15sdp"
+    android:layout_marginTop="@dimen/_7sdp"
     app:cardCornerRadius="@dimen/_10sdp"
     android:layout_marginStart="@dimen/_10sdp"
     android:layout_marginEnd="@dimen/_10sdp"
     android:backgroundTint="@color/bottom"
+    android:layout_marginBottom="@dimen/_7sdp"
     android:layout_gravity="center_horizontal">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -27,7 +29,8 @@
             android:fontFamily="@font/opensansbold"
             android:gravity="center"
             android:paddingHorizontal="@dimen/_10sdp"
-            android:text="Uvod"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="Uvodaaaaaaaaaaaaaaaaaaaa"
             android:textColor="@color/divider_2"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"

@@ -10,7 +10,7 @@ data class SubjectWithTests(
     @Embedded val subject: Subject,
     @Relation(
         parentColumn = "subjectId",
-        entityColumn = "subjectId"
+        entityColumn = "testId"
     )
     val tests: List<Test>
 

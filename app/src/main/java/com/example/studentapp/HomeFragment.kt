@@ -44,7 +44,7 @@ class HomeFragment : Fragment() {
         binding.btnAddSubject.setOnClickListener {
 
             val subject = Subject(
-                1,
+            0,
                 binding.nameEditText.text.toString()
             )
 
@@ -52,7 +52,7 @@ class HomeFragment : Fragment() {
             Log.d("test", subject.toString())
 
             subjectAdapter.setOnSubjectClick {
-                viewModel.deleteSubject(it.id.toString())
+                viewModel.deleteSubject(it.subjectId)
             }
 
         }

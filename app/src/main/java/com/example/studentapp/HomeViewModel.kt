@@ -22,7 +22,7 @@ class HomeViewModel @Inject constructor (private val homeRepository: HomeReposit
 
     }
 
-    fun deleteSubject(id: String) = viewModelScope.launch {
+    fun deleteSubject(id: Int) = viewModelScope.launch {
 
         homeRepository.deleteSubject(id)
 
