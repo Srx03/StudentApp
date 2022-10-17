@@ -15,7 +15,7 @@ class HomeRepositoryImpl @Inject constructor(private val subjectDao: SubjectDao)
         return listOfSubjects
     }
 
-    override suspend fun deleteSubject(id: String) {
+    override suspend fun deleteSubject(id: Int) {
         subjectDao.deleteSubject(id)
     }
 

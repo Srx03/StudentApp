@@ -2,6 +2,7 @@ package com.example.studentapp
 
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,13 +12,13 @@ import com.example.studentapp.models.Subject
 
 class SubjectAdapter(): RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder>() {
 
-    private var liveData: List<Subject>? = null
+    private var allSubjects: List<Subject>? = null
     var onItemClick: ((Subject) -> Unit)? = null
 
 
     @SuppressLint("NotifyDataSetChanged")
     fun setList(liveData: List<Subject>){
-        this.liveData = liveData
+        this.allSubjects = liveData
         notifyDataSetChanged()
     }
 
@@ -31,19 +32,19 @@ class SubjectAdapter(): RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder>()
 
     override fun onBindViewHolder(holder: SubjectViewHolder, position: Int) {
 
-        holder.binding.tvSubjectName.text = liveData!![position].subjectName
+        holder.binding.tvSubjectName.text = allSubjects!![position].subjectName
 
         holder.itemView.setOnLongClickListener {
-
-            onItemClick!!.invoke(liveData!![1])
+            Log.d("testic",allSubjects!![position].toString())
+            onItemClick!!.invoke(allSubjects!![position])
             true
         }
 
     }
 
     override fun getItemCount(): Int {
-        return if(liveData == null) 0
-          else  liveData!!.size
+        return if(allSubjects == null) 0
+          else  allSubjects!!.size
     }
 
     fun setOnSubjectClick(subject: (Subject) -> Unit) {

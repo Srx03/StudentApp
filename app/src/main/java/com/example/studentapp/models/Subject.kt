@@ -7,7 +7,7 @@ import org.jetbrains.annotations.NotNull
 @Entity
 data class Subject(
    @PrimaryKey(autoGenerate = true)
-   var subjectId: Int? = null,
+   var subjectId: Int = 0,
     var subjectName: String
 
 

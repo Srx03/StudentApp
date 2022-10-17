@@ -7,7 +7,7 @@ import androidx.room.PrimaryKey
     @Entity
     data class Student(
     @PrimaryKey(autoGenerate = true)
-    var studentId: Int? = null,
+    var studentId: Int,
     var name: String,
     var surename: String,
     var email: String,

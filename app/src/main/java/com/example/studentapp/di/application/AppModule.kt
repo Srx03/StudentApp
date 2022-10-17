@@ -2,7 +2,9 @@ package com.example.studentapp.di.application
 
 import android.content.Context
 import androidx.room.Room
+import com.example.studentapp.daos.StudentDao
 import com.example.studentapp.daos.SubjectDao
+import com.example.studentapp.daos.TestDao
 import com.example.studentapp.repository.HomeRepository
 import com.example.studentapp.repository.HomeRepositoryImpl
 import dagger.Module
@@ -32,6 +34,14 @@ object AppModule {
     @Singleton
     @Provides
     fun provideSubjectDao(appDatabase: AppDatabase): SubjectDao = appDatabase.subjectDao()
+
+    @Singleton
+    @Provides
+    fun provideStudentDao(appDatabase: AppDatabase): StudentDao = appDatabase.studentDao()
+
+    @Singleton
+    @Provides
+    fun provideTestDao(appDatabase: AppDatabase): TestDao = appDatabase.testDao()
 
 
 }
