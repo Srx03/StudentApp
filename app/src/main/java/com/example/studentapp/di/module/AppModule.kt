@@ -1,12 +1,12 @@
-package com.example.studentapp.di.application
+package com.example.studentapp.di.module
 
 import android.content.Context
 import androidx.room.Room
-import com.example.studentapp.daos.StudentDao
-import com.example.studentapp.daos.SubjectDao
-import com.example.studentapp.daos.TestDao
-import com.example.studentapp.repository.HomeRepository
-import com.example.studentapp.repository.HomeRepositoryImpl
+import com.example.studentapp.data.daos.StudentDao
+import com.example.studentapp.data.daos.SubjectDao
+import com.example.studentapp.data.daos.TestDao
+import com.example.studentapp.data.daos.AppDatabase
+import com.example.studentapp.repository.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -30,6 +30,14 @@ object AppModule {
     @Singleton
     @Provides
     fun provideMainRepository(subjectDao: SubjectDao): HomeRepository = HomeRepositoryImpl(subjectDao)
+
+    @Singleton
+    @Provides
+    fun provideSearchRepository(studentDao: StudentDao):SearchRepository = SearchRepositoryImpl(studentDao)
+
+    @Singleton
+    @Provides
+    fun provideAddStudentRepository(studentDao: StudentDao): AddStudentRepository = AddStudentRepositoryImpl(studentDao)
 
     @Singleton
     @Provides

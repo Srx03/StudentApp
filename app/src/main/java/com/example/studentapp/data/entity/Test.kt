@@ -1,4 +1,4 @@
-package com.example.studentapp.models
+package com.example.studentapp.data.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 @Entity
 data class Test(
     @PrimaryKey(autoGenerate = true)
-    var testId: Int? = null,
+    var testId: Int = 0,
     var name: String,
 
 )

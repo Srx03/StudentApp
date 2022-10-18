@@ -1,4 +1,4 @@
-package com.example.studentapp.models.relations
+package com.example.studentapp.data.entity.relations
 
 import androidx.room.Entity
 

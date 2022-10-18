@@ -1,10 +1,10 @@
-package com.example.studentapp.daos
+package com.example.studentapp.data.daos
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.studentapp.models.Student
-import com.example.studentapp.models.Test
-import com.example.studentapp.models.relations.*
+import com.example.studentapp.data.entity.Test
+import com.example.studentapp.data.entity.relations.StudentTestCrossRef
+import com.example.studentapp.data.entity.relations.TestWithStudents
 
 
 @Dao

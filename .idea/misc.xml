@@ -16,9 +16,10 @@
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/fragment_add_student.xml" value="0.25" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/fragment_profile.xml" value="0.23177083333333334" />
+        <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/fragment_profile.xml" value="0.22" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/fragment_search.xml" value="0.26197916666666665" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/fragment_subject.xml" value="0.25" />
+        <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/item_student_search.xml" value="0.2171875" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/item_student_subjects.xml" value="0.33" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/item_student_subjects_add.xml" value="0.26197916666666665" />
         <entry key="..\:/AndroidProjects/StudentApp/app/src/main/res/layout/item_subject.xml" value="0.25" />

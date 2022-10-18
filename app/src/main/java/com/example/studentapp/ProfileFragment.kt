@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 
 import com.example.studentapp.databinding.FragmentProfileBinding
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
-class ProfileFragment : Fragment() {
+class ProfileFragment :  BottomSheetDialogFragment() {
 
 
     private var _binding: FragmentProfileBinding? = null
