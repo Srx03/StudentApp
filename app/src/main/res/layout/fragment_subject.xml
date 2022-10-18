@@ -17,7 +17,7 @@
         android:fontFamily="@font/opensansbold"
         android:gravity="center"
         android:text="Uvod u računarstvo i informatiku"
-        android:textColor="@color/black"
+        android:textColor="@color/divider_2"
         android:textSize="@dimen/_28sdp" />
 
 
@@ -242,26 +242,59 @@
 
 
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:fontFamily="@font/opensansnormal"
+            android:text="Hold to delete test"
+            android:textColor="@color/divider_2"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            android:paddingHorizontal="@dimen/_7sdp"
+            android:layout_gravity="center_horizontal"
+            tools:listitem="@layout/test_item"/>
+
+
+
     </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layoutStudentsInSubject"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:visibility="visible"
+        android:orientation="vertical">
 
     <TextView
         android:id="@+id/subject"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
         android:fontFamily="@font/opensansbold"
         android:gravity="center"
         android:text="Students in this subject"
-        android:textColor="@color/black"
+        android:textColor="@color/divider_2"
         android:textSize="@dimen/_25sdp" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recentRecyclerView"
+        android:id="@+id/studentInSubjectsRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/_10sdp"
+
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_student_subjects" />
 
+
+
+    </LinearLayout>
 
 </LinearLayout>

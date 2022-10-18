@@ -1,7 +1,7 @@
 package com.example.studentapp.repository
 
 import androidx.lifecycle.LiveData
-import com.example.studentapp.models.Subject
+import com.example.studentapp.data.entity.Subject
 
 interface HomeRepository {
 

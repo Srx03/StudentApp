@@ -1,8 +1,8 @@
 package com.example.studentapp.repository
 
 import androidx.lifecycle.LiveData
-import com.example.studentapp.daos.SubjectDao
-import com.example.studentapp.models.Subject
+import com.example.studentapp.data.daos.SubjectDao
+import com.example.studentapp.data.entity.Subject
 import javax.inject.Inject
 
 class HomeRepositoryImpl @Inject constructor(private val subjectDao: SubjectDao): HomeRepository {

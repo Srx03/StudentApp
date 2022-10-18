@@ -5,7 +5,7 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
-    <fragment
+    <dialog
         android:id="@+id/profileFragment"
         android:name="com.example.studentapp.ProfileFragment"
         android:label="fragment_profile"
@@ -36,5 +36,9 @@
         android:id="@+id/addStudentFragment"
         android:name="com.example.studentapp.AddStudentFragment"
         android:label="fragment_add_student"
-        tools:layout="@layout/fragment_add_student" />
+        tools:layout="@layout/fragment_add_student" >
+        <action
+            android:id="@+id/action_addStudentFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
 </navigation>

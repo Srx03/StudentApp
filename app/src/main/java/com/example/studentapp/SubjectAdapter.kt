@@ -7,7 +7,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studentapp.databinding.ItemSubjectBinding
-import com.example.studentapp.models.Subject
+import com.example.studentapp.data.entity.Subject
 
 
 class SubjectAdapter(): RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder>() {

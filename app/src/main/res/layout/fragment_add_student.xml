@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/opensansbold"
             android:paddingStart="@dimen/_10sdp"
-            android:text="Add students to your class or check for tests"
+            android:text="Add students to your class"
             android:textColor="@color/divider_2"
             android:textSize="@dimen/_25sdp"
             android:textAlignment="center"
@@ -53,25 +53,6 @@
 
 
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-           android:gravity="center"
-            android:fontFamily="@font/opensansnormal"
-            android:text="Hold to delete test"
-            android:textColor="@color/divider_2"
-            android:textSize="@dimen/_20sdp"
-            android:textStyle="bold" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_12sdp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"
-            android:paddingHorizontal="@dimen/_7sdp"
-            android:layout_gravity="center_horizontal"
-            tools:listitem="@layout/test_item"/>
 
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -299,7 +280,7 @@
                 app:layout_constraintWidth_percent="0.3">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/nationalityrEditText"
+                    android:id="@+id/nationalityEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
