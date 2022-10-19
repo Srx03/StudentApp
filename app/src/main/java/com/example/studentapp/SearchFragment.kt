@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.studentapp.databinding.FragmentProfileBinding
 import com.example.studentapp.databinding.FragmentSearchBinding
@@ -47,6 +48,7 @@ class SearchFragment : Fragment() {
         }
 
         setupRecyclerView()
+        onStudentClick()
 
     }
 
@@ -58,6 +60,27 @@ class SearchFragment : Fragment() {
             adapter = allStudentsAdapter
             layoutManager = LinearLayoutManager(context,  LinearLayoutManager.VERTICAL, false)
         }
+
+    }
+
+    fun onStudentClick(){
+
+        allStudentsAdapter.setOnStudentClick{ student ->
+            val bundle = Bundle().apply {
+                putInt("id", student.studentId)
+                putString("name", student.name)
+                putString("surename", student.surename)
+                putString("email", student.email)
+                putString("phone", student.phone)
+                putString("birthday", student.birthday)
+                putString("address", student.address)
+                putString("gender", student.gender)
+                putString("nationality", student.nationality)
+                putString("citizenship", student.citizenship)
+            }
+            findNavController().navigate(R.id.action_searchFragment_to_profileFragment, bundle)
+        }
+
 
     }
 

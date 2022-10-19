@@ -37,7 +37,6 @@ class AddStudentViewModel @Inject constructor(private val addStudentRepository: 
             validateNationality(student.nationality),
             validateCitizenship(student.citizenship)
 
-
             )
 
             _validation.send(validationCheck)

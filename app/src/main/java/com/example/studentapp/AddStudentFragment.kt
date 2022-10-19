@@ -54,8 +54,7 @@ class AddStudentFragment : Fragment() {
                     addressEditText.text.toString(),
                     genderEditText.text.toString(),
                     nationalityEditText.text.toString(),
-                    citizenshipEditText.text.toString(),
-
+                    citizenshipEditText.text.toString()
 
                     )
                 viewModel.addStudent(student)

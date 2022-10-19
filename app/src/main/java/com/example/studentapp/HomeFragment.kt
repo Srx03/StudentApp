@@ -10,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.studentapp.databinding.FragmentHomeBinding
 import com.example.studentapp.data.entity.Subject
+import com.example.studentapp.util.showSnackBar
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,34 +40,38 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+        setupRecyclerView()
+
         binding.btnAddSubject.setOnClickListener {
 
-            val subject = Subject(
-            0,
-                binding.nameEditText.text.toString()
-            )
+            if (binding.nameEditText.text.isNullOrBlank()) {
 
-            viewModel.addSubject(subject)
-            Log.d("test", subject.toString())
+                showSnackBar(message = "Please add subject name")
 
-            subjectAdapter.setOnSubjectClick {
-                viewModel.deleteSubject(it.subjectId)
+            } else {
+
+                val subject = Subject(
+                    0,
+                    binding.nameEditText.text.toString()
+                )
+                viewModel.addSubject(subject)
             }
-
         }
-
 
 
         viewModel.getAllSubjects().observe(viewLifecycleOwner){
 
             subjectAdapter.setList(it)
 
-            Log.d("testovka", it.toString())
 
         }
 
+        subjectAdapter.setOnSubjectClick {
+            viewModel.deleteSubject(it.subjectId)
+        }
 
-        setupRecyclerView()
+
 
     }
 
