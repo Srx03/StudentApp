@@ -6,11 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import com.example.studentapp.data.entity.Student
 import com.example.studentapp.data.entity.Subject
 import com.example.studentapp.databinding.FragmentAddStudentBinding
+import com.example.studentapp.util.Validation
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 @AndroidEntryPoint
 class AddStudentFragment : Fragment() {
@@ -37,7 +42,7 @@ class AddStudentFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-           btnAdd.setOnClickListener {
+            btnAdd.setOnClickListener {
 
                 val student = Student(
                     0,
@@ -52,8 +57,101 @@ class AddStudentFragment : Fragment() {
                     citizenshipEditText.text.toString(),
 
 
-                )
+                    )
                 viewModel.addStudent(student)
+            }
+
+        }
+
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.validation.collect { validation ->
+
+                if (validation.name is Validation.Failed) {
+                    withContext(Dispatchers.Main) {
+                        binding.emailEditText.apply {
+                            requestFocus()
+                            binding.nameInputLayout.helperText = validation.name.message
+                        }
+                    }
+                }
+
+                if (validation.surename is Validation.Failed) {
+                    withContext(Dispatchers.Main) {
+                        binding.emailEditText.apply {
+                            requestFocus()
+                            binding.surnameInputLayout.helperText = validation.surename.message
+                        }
+                    }
+                }
+
+
+                if (validation.email is Validation.Failed) {
+                    withContext(Dispatchers.Main) {
+                        binding.emailEditText.apply {
+                            requestFocus()
+                            binding.emailInputLayout.helperText = validation.email.message
+                        }
+                    }
+                }
+
+
+                if (validation.phone is Validation.Failed) {
+                    withContext(Dispatchers.Main) {
+                        binding.phonelEditText.apply {
+                            requestFocus()
+                            binding.phoneInputLayout.helperText = validation.phone.message
+                        }
+                    }
+                }
+
+
+                if (validation.birthday is Validation.Failed) {
+                    withContext(Dispatchers.Main) {
+                        binding.birthdayEditText.apply {
+                            requestFocus()
+                            binding.birthdayInputLayout.helperText = validation.birthday.message
+                        }
+                    }
+                }
+
+
+                if (validation.address is Validation.Failed) {
+                    withContext(Dispatchers.Main) {
+                        binding.addressEditText.apply {
+                            requestFocus()
+                            binding.addressInputLayout.helperText = validation.address.message
+                        }
+                    }
+                }
+
+                if (validation.gender is Validation.Failed) {
+                    withContext(Dispatchers.Main) {
+                        binding.genderEditText.apply {
+                            requestFocus()
+                            binding.genderInputLayout.helperText = validation.gender.message
+                        }
+                    }
+                }
+
+               if (validation.nationality is Validation.Failed) {
+                    withContext(Dispatchers.Main) {
+                        binding.nationalityEditText.apply {
+                            requestFocus()
+                            binding.nationalityInputLayout.helperText = validation.nationality.message
+                        }
+                    }
+                }
+
+                if (validation.citizenship is Validation.Failed) {
+                    withContext(Dispatchers.Main) {
+                        binding.citizenshipEditText.apply {
+                            requestFocus()
+                            binding.citizenshipInputLayout.helperText = validation.citizenship.message
+                        }
+                    }
+                }
+
+
             }
 
         }

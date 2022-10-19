@@ -44,6 +44,11 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,7 +68,7 @@
 
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/namelInputLayout"
+                android:id="@+id/nameInputLayout"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -73,6 +78,9 @@
                 android:textColorHint="@color/divider_2"
                 app:boxBackgroundColor="@color/text_primary"
                 app:boxStrokeWidth="@dimen/_3sdp"
+                app:boxStrokeErrorColor="@color/red"
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/red"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintWidth_default="percent"
@@ -101,6 +109,9 @@
                 android:textColorHint="@color/divider_2"
                 app:boxBackgroundColor="@color/text_primary"
                 app:boxStrokeWidth="@dimen/_3sdp"
+                app:boxStrokeErrorColor="@color/red"
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/red"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintWidth_default="percent"
@@ -131,6 +142,9 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:elevation="5dp"
             android:hint="Email"
+            app:boxStrokeErrorColor="@color/red"
+            app:helperTextEnabled="true"
+            app:helperTextTextColor="@color/red"
             app:boxStrokeWidth="@dimen/_3sdp"
             android:orientation="vertical"
             android:textColorHint="@color/divider_2"
@@ -158,6 +172,9 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:elevation="5dp"
             android:hint="Phone"
+            app:boxStrokeErrorColor="@color/red"
+            app:helperTextEnabled="true"
+            app:helperTextTextColor="@color/red"
             app:boxStrokeWidth="@dimen/_3sdp"
             android:orientation="vertical"
             android:textColorHint="@color/divider_2"
@@ -185,6 +202,9 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:elevation="5dp"
             android:hint="Birthday"
+            app:boxStrokeErrorColor="@color/red"
+            app:helperTextEnabled="true"
+            app:helperTextTextColor="@color/red"
             android:orientation="vertical"
             android:textColorHint="@color/divider_2"
             app:boxBackgroundColor="@color/text_primary"
@@ -212,6 +232,9 @@
             android:layout_marginEnd="@dimen/_10sdp"
             android:elevation="5dp"
             android:hint="Address"
+            app:boxStrokeErrorColor="@color/red"
+            app:helperTextEnabled="true"
+            app:helperTextTextColor="@color/red"
             android:orientation="vertical"
             android:textColorHint="@color/divider_2"
             app:boxBackgroundColor="@color/text_primary"
@@ -221,7 +244,7 @@
                 android:id="@+id/addressEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="date"
+                android:inputType="text"
                 android:outlineAmbientShadowColor="@color/divider_2"
                 android:outlineSpotShadowColor="@color/divider_2"
                 android:textColor="@color/divider_2" />
@@ -247,6 +270,9 @@
                 android:textColorHint="@color/divider_2"
                 app:boxBackgroundColor="@color/text_primary"
                 app:boxStrokeWidth="@dimen/_3sdp"
+                app:boxStrokeErrorColor="@color/red"
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/red"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintWidth_default="percent"
@@ -273,6 +299,9 @@
                 android:textColorHint="@color/divider_2"
                 app:boxBackgroundColor="@color/text_primary"
                 app:boxStrokeWidth="@dimen/_3sdp"
+                app:boxStrokeErrorColor="@color/red"
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/red"
                 app:layout_constraintStart_toEndOf="@+id/genderInputLayout"
                 app:layout_constraintEnd_toStartOf="@+id/citizenshipInputLayout"
                 app:layout_constraintTop_toTopOf="parent"
@@ -302,6 +331,9 @@
                 android:textColorHint="@color/divider_2"
                 app:boxBackgroundColor="@color/text_primary"
                 app:boxStrokeWidth="@dimen/_3sdp"
+                app:boxStrokeErrorColor="@color/red"
+                app:helperTextEnabled="true"
+                app:helperTextTextColor="@color/red"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintWidth_default="percent"
@@ -339,5 +371,6 @@
 
     </LinearLayout>
 
+    </androidx.core.widget.NestedScrollView>
 
 </LinearLayout>
