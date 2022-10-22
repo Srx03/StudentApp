@@ -1,14 +1,11 @@
-package com.example.studentapp
+package com.example.studentapp.ui.search
 
 
 import android.annotation.SuppressLint
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.studentapp.data.entity.Student
-import com.example.studentapp.databinding.ItemSubjectBinding
-import com.example.studentapp.data.entity.Subject
 import com.example.studentapp.databinding.ItemStudentSearchBinding
 import com.example.studentapp.util.formatDate
 

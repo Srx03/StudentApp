@@ -3,23 +3,105 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:layout_height="match_parent"
     android:background="@color/text_primary"
-    tools:context=".ProfileFragment">
+    tools:context=".ui.profile.ProfileFragment">
 
-    <ImageView
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="@dimen/_4sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginEnd="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_4sdp"
-        android:foreground="?selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_approve"
-        app:tint="@color/divider" />
+
+    <RelativeLayout
+        android:id="@+id/selectedEditTextLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/btnSaveSelectedEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_approve"
+            app:tint="@color/divider" />
+
+        <ImageView
+            android:id="@+id/btnCloseSelectedEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/_8sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_close"
+            app:tint="@color/divider" />
+
+
+        <LinearLayout
+            android:id="@+id/llSelected"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnCloseSelectedEditText"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/currentlyEditing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:text="Name"
+                android:textSize="@dimen/_15sdp" />
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/selectedEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:outlineAmbientShadowColor="@color/divider_2"
+                android:outlineSpotShadowColor="@color/divider_2"
+                android:textColor="@color/divider_2" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/_300sdp"
+            android:layout_height="@dimen/_300sdp"
+            android:layout_centerInParent="true"
+            android:alpha="0.3"
+            android:src="@drawable/img_logo" />
+
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:id="@+id/selectWhatToEditLayout"
+        android:layout_width="match_parent"
+        android:visibility="visible"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_approve"
+            app:tint="@color/divider" />
 
     <ImageView
         android:id="@+id/btnClose"
@@ -34,231 +116,290 @@
         app:tint="@color/divider" />
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/btnClose"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:orientation="vertical"
-        android:paddingBottom="@dimen/_15sdp">
-
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_below="@+id/btnClose"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:gravity="bottom"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/_15sdp">
 
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="Name"
-                android:textSize="@dimen/_15sdp" />
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nameEditText"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:outlineAmbientShadowColor="@color/divider_2"
-                android:outlineSpotShadowColor="@color/divider_2"
-                android:textColor="@color/divider_2" />
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="Name"
+                    android:textSize="@dimen/_15sdp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
+                    android:outlineAmbientShadowColor="@color/divider_2"
+                    android:outlineSpotShadowColor="@color/divider_2"
+                    android:textColor="@color/divider_2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="Surename"
+                    android:textSize="@dimen/_15sdp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/surenameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
+                    android:outlineAmbientShadowColor="@color/divider_2"
+                    android:outlineSpotShadowColor="@color/divider_2"
+                    android:textColor="@color/divider_2" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="Email"
+                    android:textSize="@dimen/_15sdp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/emailEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="textEmailAddress"
+                    android:outlineAmbientShadowColor="@color/divider_2"
+                    android:outlineSpotShadowColor="@color/divider_2"
+                    android:textColor="@color/divider_2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+
+                    android:text="Phone"
+                    android:textSize="@dimen/_15sdp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/phonelEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="phone"
+                    android:outlineAmbientShadowColor="@color/divider_2"
+                    android:outlineSpotShadowColor="@color/divider_2"
+                    android:textColor="@color/divider_2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="Birthday"
+                    android:textSize="@dimen/_15sdp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/birthdayEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="date"
+                    android:outlineAmbientShadowColor="@color/divider_2"
+                    android:outlineSpotShadowColor="@color/divider_2"
+                    android:textColor="@color/divider_2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="Address"
+                    android:textSize="@dimen/_15sdp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/addressEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
+                    android:outlineAmbientShadowColor="@color/divider_2"
+                    android:outlineSpotShadowColor="@color/divider_2"
+                    android:textColor="@color/divider_2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="Gender"
+                    android:textSize="@dimen/_15sdp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/genderEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
+                    android:outlineAmbientShadowColor="@color/divider_2"
+                    android:outlineSpotShadowColor="@color/divider_2"
+                    android:textColor="@color/divider_2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="Nationality"
+                    android:textSize="@dimen/_15sdp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/nationalityEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
+                    android:outlineAmbientShadowColor="@color/divider_2"
+                    android:outlineSpotShadowColor="@color/divider_2"
+                    android:textColor="@color/divider_2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_15sdp"
+                android:layout_marginEnd="@dimen/_15sdp"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:text="Citizenship"
+                    android:textSize="@dimen/_15sdp" />
+
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/citizenshipEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
+                    android:outlineAmbientShadowColor="@color/divider_2"
+                    android:outlineSpotShadowColor="@color/divider_2"
+                    android:textColor="@color/divider_2" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="Email"
-                android:textSize="@dimen/_15sdp" />
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:outlineAmbientShadowColor="@color/divider_2"
-                android:outlineSpotShadowColor="@color/divider_2"
-                android:textColor="@color/divider_2" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-
-                android:text="Phone"
-                android:textSize="@dimen/_15sdp" />
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/phonelEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:outlineAmbientShadowColor="@color/divider_2"
-                android:outlineSpotShadowColor="@color/divider_2"
-                android:textColor="@color/divider_2" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="Birthday"
-                android:textSize="@dimen/_15sdp" />
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/birthdayEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:outlineAmbientShadowColor="@color/divider_2"
-                android:outlineSpotShadowColor="@color/divider_2"
-                android:textColor="@color/divider_2" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="Address"
-                android:textSize="@dimen/_15sdp" />
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/addressEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:outlineAmbientShadowColor="@color/divider_2"
-                android:outlineSpotShadowColor="@color/divider_2"
-                android:textColor="@color/divider_2" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="Gender"
-                android:textSize="@dimen/_15sdp" />
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/genderEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:outlineAmbientShadowColor="@color/divider_2"
-                android:outlineSpotShadowColor="@color/divider_2"
-                android:textColor="@color/divider_2" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="Nationality"
-                android:textSize="@dimen/_15sdp" />
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nationalityEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:outlineAmbientShadowColor="@color/divider_2"
-                android:outlineSpotShadowColor="@color/divider_2"
-                android:textColor="@color/divider_2" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="start"
-                android:text="Citizenship"
-                android:textSize="@dimen/_15sdp" />
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/citizenshipEditText"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:outlineAmbientShadowColor="@color/divider_2"
-                android:outlineSpotShadowColor="@color/divider_2"
-                android:textColor="@color/divider_2" />
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

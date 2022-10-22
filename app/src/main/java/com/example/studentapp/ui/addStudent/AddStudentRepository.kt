@@ -1,4 +1,4 @@
-package com.example.studentapp.repository
+package com.example.studentapp.ui.addStudent
 
 import androidx.lifecycle.LiveData
 import com.example.studentapp.data.entity.Student

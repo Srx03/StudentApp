@@ -1,4 +1,4 @@
-package com.example.studentapp.repository
+package com.example.studentapp.ui.home
 
 import androidx.lifecycle.LiveData
 import com.example.studentapp.data.daos.SubjectDao
@@ -7,12 +7,11 @@ import javax.inject.Inject
 
 class HomeRepositoryImpl @Inject constructor(private val subjectDao: SubjectDao): HomeRepository {
 
-    private lateinit var listOfSubjects:LiveData<List<Subject>>
+
 
 
     override fun getAllSubjects(): LiveData<List<Subject>> {
-        listOfSubjects = subjectDao.getAllSubject()
-        return listOfSubjects
+        return subjectDao.getAllSubject()
     }
 
     override suspend fun deleteSubject(id: Int) {
