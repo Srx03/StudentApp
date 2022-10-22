@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/text_primary"
-    tools:context=".AddStudentFragment">
+    tools:context=".ui.addStudent.AddStudentFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/welcome"

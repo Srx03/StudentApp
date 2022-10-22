@@ -1,4 +1,4 @@
-package com.example.studentapp
+package com.example.studentapp.ui.addStudent
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,9 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import com.example.studentapp.data.entity.Student
-import com.example.studentapp.data.entity.Subject
 import com.example.studentapp.databinding.FragmentAddStudentBinding
 import com.example.studentapp.util.Validation
 import dagger.hilt.android.AndroidEntryPoint

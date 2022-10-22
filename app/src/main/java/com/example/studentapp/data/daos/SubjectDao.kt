@@ -25,11 +25,9 @@ interface SubjectDao {
 
     @Transaction
     @Query("SELECT * FROM subject WHERE subjectId = :id")
-    suspend fun getStudetsOfSubject(id: Int): List<SubjectWithStudents>
+    fun getStudetsOfSubject(id: Int): List<SubjectWithStudents>
 
-    @Transaction
-    @Query("SELECT * FROM subject WHERE subjectId = :id")
-    suspend fun getTestsOfSubject(id: Int): List<SubjectWithTests>
+
 
 
 }

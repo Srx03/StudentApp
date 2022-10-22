@@ -1,4 +1,4 @@
-package com.example.studentapp
+package com.example.studentapp.ui.home
 
 
 import android.annotation.SuppressLint

@@ -6,7 +6,14 @@ import com.example.studentapp.data.daos.StudentDao
 import com.example.studentapp.data.daos.SubjectDao
 import com.example.studentapp.data.daos.TestDao
 import com.example.studentapp.data.daos.AppDatabase
-import com.example.studentapp.repository.*
+import com.example.studentapp.ui.addStudent.AddStudentRepository
+import com.example.studentapp.ui.addStudent.AddStudentRepositoryImpl
+import com.example.studentapp.ui.home.HomeRepository
+import com.example.studentapp.ui.home.HomeRepositoryImpl
+import com.example.studentapp.ui.search.SearchRepository
+import com.example.studentapp.ui.search.SearchRepositoryImpl
+import com.example.studentapp.ui.subject.SubjectRepository
+import com.example.studentapp.ui.subject.SubjectRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,11 +40,15 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideSearchRepository(studentDao: StudentDao):SearchRepository = SearchRepositoryImpl(studentDao)
+    fun provideSearchRepository(studentDao: StudentDao): SearchRepository = SearchRepositoryImpl(studentDao)
 
     @Singleton
     @Provides
     fun provideAddStudentRepository(studentDao: StudentDao): AddStudentRepository = AddStudentRepositoryImpl(studentDao)
+
+    @Singleton
+    @Provides
+    fun provideSubjectRepository(subjectDao: SubjectDao, testDao: TestDao, studentDao: StudentDao): SubjectRepository = SubjectRepositoryImpl(subjectDao, testDao, studentDao)
 
     @Singleton
     @Provides

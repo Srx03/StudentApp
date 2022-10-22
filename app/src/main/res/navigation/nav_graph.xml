@@ -7,12 +7,12 @@
 
     <dialog
         android:id="@+id/profileFragment"
-        android:name="com.example.studentapp.ProfileFragment"
+        android:name="com.example.studentapp.ui.profile.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/searchFragment"
-        android:name="com.example.studentapp.SearchFragment"
+        android:name="com.example.studentapp.ui.search.SearchFragment"
         android:label="fragment_search"
         tools:layout="@layout/fragment_search" >
         <action
@@ -21,7 +21,7 @@
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.studentapp.HomeFragment"
+        android:name="com.example.studentapp.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -33,12 +33,12 @@
     </fragment>
     <fragment
         android:id="@+id/subjectFragment"
-        android:name="com.example.studentapp.SubjectFragment"
+        android:name="com.example.studentapp.ui.subject.SubjectFragment"
         android:label="fragment_subject"
         tools:layout="@layout/fragment_subject" />
     <fragment
         android:id="@+id/addStudentFragment"
-        android:name="com.example.studentapp.AddStudentFragment"
+        android:name="com.example.studentapp.ui.addStudent.AddStudentFragment"
         android:label="fragment_add_student"
         tools:layout="@layout/fragment_add_student" />
 </navigation>

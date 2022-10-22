@@ -1,10 +1,8 @@
-package com.example.studentapp
+package com.example.studentapp.ui.addStudent
 
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.studentapp.data.entity.Student
-import com.example.studentapp.repository.AddStudentRepository
 import com.example.studentapp.util.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel

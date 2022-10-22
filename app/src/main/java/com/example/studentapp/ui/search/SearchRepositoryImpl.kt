@@ -1,13 +1,12 @@
-package com.example.studentapp.repository
+package com.example.studentapp.ui.search
 
 import androidx.lifecycle.LiveData
 import com.example.studentapp.data.daos.StudentDao
-import com.example.studentapp.data.daos.SubjectDao
 import com.example.studentapp.data.entity.Student
-import com.example.studentapp.data.entity.Subject
 import javax.inject.Inject
 
-class SearchRepositoryImpl @Inject constructor(private val studentDao: StudentDao): SearchRepository {
+class SearchRepositoryImpl @Inject constructor(private val studentDao: StudentDao):
+    SearchRepository {
 
     private lateinit var listOfAllStudents: LiveData<List<Student>>
 

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/text_primary"
-    tools:context=".ProfileFragment">
+    tools:context=".ui.profile.ProfileFragment">
 
 
     <RelativeLayout
@@ -64,7 +64,7 @@
                 android:id="@+id/selectedEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
+                android:inputType="text"
                 android:outlineAmbientShadowColor="@color/divider_2"
                 android:outlineSpotShadowColor="@color/divider_2"
                 android:textColor="@color/divider_2" />
@@ -90,19 +90,18 @@
         android:layout_height="match_parent">
 
 
-
-    <ImageView
-        android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="@dimen/_4sdp"
-        android:layout_marginTop="@dimen/_8sdp"
-        android:layout_marginEnd="@dimen/_8sdp"
-        android:layout_marginBottom="@dimen/_4sdp"
-        android:foreground="?selectableItemBackgroundBorderless"
-        android:src="@drawable/ic_approve"
-        app:tint="@color/divider" />
+        <ImageView
+            android:id="@+id/btnSave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:foreground="?selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_approve"
+            app:tint="@color/divider" />
 
     <ImageView
         android:id="@+id/btnClose"
@@ -146,7 +145,10 @@
                     android:id="@+id/nameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
                     android:outlineAmbientShadowColor="@color/divider_2"
                     android:outlineSpotShadowColor="@color/divider_2"
                     android:textColor="@color/divider_2" />
@@ -174,7 +176,10 @@
                     android:id="@+id/surenameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
                     android:outlineAmbientShadowColor="@color/divider_2"
                     android:outlineSpotShadowColor="@color/divider_2"
                     android:textColor="@color/divider_2" />
@@ -202,6 +207,9 @@
                     android:id="@+id/emailEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
                     android:inputType="textEmailAddress"
                     android:outlineAmbientShadowColor="@color/divider_2"
                     android:outlineSpotShadowColor="@color/divider_2"
@@ -230,7 +238,10 @@
                     android:id="@+id/phonelEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="phone"
                     android:outlineAmbientShadowColor="@color/divider_2"
                     android:outlineSpotShadowColor="@color/divider_2"
                     android:textColor="@color/divider_2" />
@@ -257,7 +268,10 @@
                     android:id="@+id/birthdayEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="date"
                     android:outlineAmbientShadowColor="@color/divider_2"
                     android:outlineSpotShadowColor="@color/divider_2"
                     android:textColor="@color/divider_2" />
@@ -284,7 +298,10 @@
                     android:id="@+id/addressEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
                     android:outlineAmbientShadowColor="@color/divider_2"
                     android:outlineSpotShadowColor="@color/divider_2"
                     android:textColor="@color/divider_2" />
@@ -311,7 +328,10 @@
                     android:id="@+id/genderEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
                     android:outlineAmbientShadowColor="@color/divider_2"
                     android:outlineSpotShadowColor="@color/divider_2"
                     android:textColor="@color/divider_2" />
@@ -338,7 +358,10 @@
                     android:id="@+id/nationalityEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
                     android:outlineAmbientShadowColor="@color/divider_2"
                     android:outlineSpotShadowColor="@color/divider_2"
                     android:textColor="@color/divider_2" />
@@ -365,7 +388,10 @@
                     android:id="@+id/citizenshipEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:inputType="text"
                     android:outlineAmbientShadowColor="@color/divider_2"
                     android:outlineSpotShadowColor="@color/divider_2"
                     android:textColor="@color/divider_2" />

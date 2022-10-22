@@ -1,7 +1,6 @@
-package com.example.studentapp
+package com.example.studentapp.ui.profile
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,6 +10,7 @@ import androidx.fragment.app.activityViewModels
 import com.example.studentapp.data.entity.Student
 
 import com.example.studentapp.databinding.FragmentProfileBinding
+import com.example.studentapp.ui.addStudent.AddStudentViewModel
 import com.example.studentapp.util.showSnackBar
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -112,7 +112,7 @@ class ProfileFragment :  BottomSheetDialogFragment() {
 
                 selectedEditText.text = nameEditText.text
 
-                btnCloseSelectedEditText.setOnClickListener {
+                btnSaveSelectedEditText.setOnClickListener {
                     if (selectedEditText.text.isNullOrBlank())
                         showSnackBar(message = "Please add name if you want to change it")
                     else {
@@ -134,7 +134,7 @@ class ProfileFragment :  BottomSheetDialogFragment() {
 
                 selectedEditText.text = surenameEditText.text
 
-                btnCloseSelectedEditText.setOnClickListener {
+                btnSaveSelectedEditText.setOnClickListener {
                     if (selectedEditText.text.isNullOrBlank())
                         showSnackBar(message = "Please add surename if you want to change it")
                     else {
