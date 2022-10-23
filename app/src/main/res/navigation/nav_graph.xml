@@ -25,9 +25,6 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
-            android:id="@+id/action_homeFragment_to_addStudentFragment"
-            app:destination="@id/addStudentFragment" />
-        <action
             android:id="@+id/action_homeFragment_to_subjectFragment"
             app:destination="@id/subjectFragment" />
     </fragment>

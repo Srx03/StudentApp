@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.studentapp.R
 import com.example.studentapp.databinding.FragmentHomeBinding
 import com.example.studentapp.data.entity.Subject
 import com.example.studentapp.util.showSnackBar
@@ -66,8 +68,16 @@ class HomeFragment : Fragment() {
 
         }
 
-        subjectAdapter.setOnSubjectClick {
+        subjectAdapter.setOnHoldSubjectClick {
             viewModel.deleteSubject(it.subjectId)
+        }
+
+        subjectAdapter.setOnSubjectClick {
+            val bundle = Bundle().apply{
+                putInt("subjectId", it.subjectId)
+                putString("subjectName", it.subjectName)
+            }
+            findNavController().navigate(R.id.action_homeFragment_to_subjectFragment, bundle)
         }
 
 

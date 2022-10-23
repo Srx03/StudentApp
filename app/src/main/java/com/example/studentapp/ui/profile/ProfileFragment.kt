@@ -20,7 +20,7 @@ class ProfileFragment :  BottomSheetDialogFragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
 
-   var studenId: Int = 0
+   var studentId: Int = 0
     lateinit var name: String
     lateinit var surename: String
     lateinit var email: String
@@ -56,7 +56,7 @@ class ProfileFragment :  BottomSheetDialogFragment() {
             }
 
             val args = arguments
-            studenId = args?.getInt("id")!!
+            studentId = args?.getInt("id")!!
             name = args.getString("name").toString()
             surename = args.getString("surename").toString()
             email = args.getString("email").toString()
@@ -82,7 +82,7 @@ class ProfileFragment :  BottomSheetDialogFragment() {
 
             btnSave.setOnClickListener {
                 val student = Student(
-                    studenId,
+                    studentId,
                     nameEditText.text.toString(),
                     surenameEditText.text.toString(),
                     emailEditText.text.toString(),

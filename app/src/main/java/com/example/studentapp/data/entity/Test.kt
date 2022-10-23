@@ -8,6 +8,8 @@ data class Test(
     @PrimaryKey(autoGenerate = true)
     var testId: Int = 0,
     var name: String,
+    var date: String,
+    var time: String,
     var subjectId: Int
 
 )
