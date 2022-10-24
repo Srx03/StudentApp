@@ -2,14 +2,19 @@ package com.example.studentapp.ui.addStudent
 
 import android.app.DatePickerDialog
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.studentapp.data.entity.Student
 import com.example.studentapp.databinding.FragmentAddStudentBinding
+import com.example.studentapp.ui.subject.AddedStudentsAdapter
+import com.example.studentapp.ui.subject.StudentsToAddAdapter
+import com.example.studentapp.ui.subject.TestAdapter
 import com.example.studentapp.util.Validation
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
@@ -25,6 +30,8 @@ class AddStudentFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val  viewModel: AddStudentViewModel by activityViewModels()
+
+    private lateinit var orderAdapter: OrderAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -172,6 +179,29 @@ class AddStudentFragment : Fragment() {
 
         }
 
+
+        binding.btnOrderGender.setOnClickListener {
+
+            viewModel.getStudentsByGender(binding.genderOrderEditText.text.toString()).observe(viewLifecycleOwner){
+
+                orderAdapter.setList(it)
+
+            }
+
+        }
+
+
+        setupRecyclerView()
+
+    }
+
+    fun setupRecyclerView(){
+        orderAdapter = OrderAdapter()
+
+        binding.orderRecyclerView.apply {
+            adapter = orderAdapter
+            layoutManager = LinearLayoutManager(context,  LinearLayoutManager.VERTICAL, false)
+        }
     }
 
     override fun onDestroyView() {

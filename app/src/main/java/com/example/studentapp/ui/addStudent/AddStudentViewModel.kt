@@ -1,8 +1,12 @@
 package com.example.studentapp.ui.addStudent
 
+import android.util.Log
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.studentapp.data.entity.Student
+import com.example.studentapp.data.entity.Subject
 import com.example.studentapp.util.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
@@ -15,6 +19,15 @@ class AddStudentViewModel @Inject constructor(private val addStudentRepository: 
 
     private val _validation  = Channel<AddStudentFieldsState>()
     val validation = _validation.receiveAsFlow()
+
+
+
+    fun getStudentsByGender(gender: String) = addStudentRepository.getStudentsByGender(gender)
+
+
+    fun getStudentsByNationality(nationality: String) =  addStudentRepository.getStudentsByNationality(nationality)
+
+    fun getStudentsByAge() = addStudentRepository.getStudentsByAge()
 
     fun addStudent(student: Student) = viewModelScope.launch {
 

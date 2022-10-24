@@ -89,7 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_15sdp"
-        android:visibility="gone"
+        android:visibility="visible"
         android:orientation="vertical">
 
         <EditText
@@ -145,7 +145,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_15sdp"
-        android:visibility="visible"
+        android:visibility="gone"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -157,7 +157,7 @@
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:elevation="5dp"
-            android:hint="Enter test name..."
+            android:hint="Test name"
             app:boxStrokeWidth="@dimen/_3sdp"
             android:orientation="vertical"
             android:textColorHint="@color/divider_2"

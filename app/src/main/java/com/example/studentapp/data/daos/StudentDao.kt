@@ -23,6 +23,14 @@ interface StudentDao {
     @Query("SELECT * FROM student WHERE name LIKE '%' || :searchQuery || '%'")
     fun searchForStudents(searchQuery: String): Flow<List<Student>>
 
+    @Query("SELECT * FROM student WHERE gender IN (:gender)")
+    fun getStudentsByGender(gender: String): LiveData<List<Student>>
+
+    @Query("SELECT * FROM student WHERE nationality IN (:nationality)")
+    fun getStudentsByNationality(nationality: String): LiveData<List<Student>>
+
+    @Query("SELECT * FROM student ORDER BY birthday DESC")
+    fun getStudentsByAge(): LiveData<List<Student>>
 
     @Transaction
     @Query("SELECT * FROM student WHERE studentId = :id")

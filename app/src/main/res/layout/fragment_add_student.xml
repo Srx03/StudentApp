@@ -372,6 +372,193 @@
             android:textColor="@color/white"
             android:textSize="@dimen/_15sdp" />
 
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvOrder"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:fontFamily="@font/opensansnormal"
+                android:text="Oder students"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:textColor="@color/divider_2"
+                android:textSize="@dimen/_20sdp"
+                android:textStyle="bold" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cl2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_5sdp">
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/genderOrderInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:hint="Gender"
+                    android:orientation="vertical"
+                    android:textColorHint="@color/divider_2"
+                    app:boxBackgroundColor="@color/text_primary"
+                    app:boxStrokeWidth="@dimen/_3sdp"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/red"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_default="percent"
+                    app:layout_constraintWidth_percent="0.3">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/genderOrderEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:outlineAmbientShadowColor="@color/divider_2"
+                        android:outlineSpotShadowColor="@color/divider_2"
+                        android:textColor="@color/divider_2" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnOrderGender"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/btnbackground"
+                    android:fontFamily="@font/opensansnormal"
+                    android:text="Order"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/genderOrderInputLayout"
+                    app:layout_constraintStart_toStartOf="@+id/genderOrderInputLayout"
+                    app:layout_constraintEnd_toEndOf="@+id/genderOrderInputLayout"
+                    android:textSize="@dimen/_15sdp" />
+
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/nationalityOrderInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Nationality"
+                    android:orientation="vertical"
+                    android:textColorHint="@color/divider_2"
+                    app:boxBackgroundColor="@color/text_primary"
+                    app:boxStrokeWidth="@dimen/_3sdp"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/red"
+                    app:layout_constraintStart_toEndOf="@+id/genderOrderInputLayout"
+                    app:layout_constraintEnd_toStartOf="@+id/citizenshipOrderInputLayout"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_default="percent"
+                    app:layout_constraintWidth_percent="0.3">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/nationalityOrderEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:outlineAmbientShadowColor="@color/divider_2"
+                        android:outlineSpotShadowColor="@color/divider_2"
+                        android:textColor="@color/divider_2" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnOrderNationality"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/btnbackground"
+                    android:fontFamily="@font/opensansnormal"
+                    android:text="Order"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/nationalityOrderInputLayout"
+                    app:layout_constraintStart_toStartOf="@+id/nationalityOrderInputLayout"
+                    app:layout_constraintEnd_toEndOf="@+id/nationalityOrderInputLayout"
+                    android:textSize="@dimen/_15sdp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/citizenshipOrderInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_10sdp"
+                    android:hint="Citizenship"
+                    android:orientation="vertical"
+                    android:textColorHint="@color/divider_2"
+                    app:boxBackgroundColor="@color/text_primary"
+                    app:boxStrokeWidth="@dimen/_3sdp"
+                    app:boxStrokeErrorColor="@color/red"
+                    app:helperTextEnabled="true"
+                    app:helperTextTextColor="@color/red"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_default="percent"
+                    app:layout_constraintWidth_percent="0.3">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/citizenshipOrderEditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="text"
+                        android:outlineAmbientShadowColor="@color/divider_2"
+                        android:outlineSpotShadowColor="@color/divider_2"
+                        android:textColor="@color/divider_2" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnOrderCitizenship"
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_50sdp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginBottom="@dimen/_5sdp"
+                    android:background="@drawable/btnbackground"
+                    android:fontFamily="@font/opensansnormal"
+                    android:text="Order"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/citizenshipOrderInputLayout"
+                    app:layout_constraintStart_toStartOf="@+id/citizenshipOrderInputLayout"
+                    app:layout_constraintEnd_toEndOf="@+id/citizenshipOrderInputLayout"
+                    android:textSize="@dimen/_15sdp" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/orderRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="@dimen/_6sdp"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/item_student_search" />
+
+
+        </LinearLayout>
+
     </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
