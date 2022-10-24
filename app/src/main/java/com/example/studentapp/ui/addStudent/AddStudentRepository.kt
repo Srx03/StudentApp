@@ -8,4 +8,10 @@ interface AddStudentRepository {
 
     suspend fun addStudent(student: Student)
 
+    fun getStudentsByGender(gender: String): LiveData<List<Student>>
+
+    fun getStudentsByNationality(nationality: String): LiveData<List<Student>>
+
+    fun getStudentsByAge(): LiveData<List<Student>>
+
 }
