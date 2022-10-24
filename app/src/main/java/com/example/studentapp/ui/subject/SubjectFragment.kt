@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.studentapp.data.entity.Test
 import com.example.studentapp.data.entity.relations.StudentSubjectCrossRef
 import com.example.studentapp.databinding.FragmentSubjectBinding
+import com.example.studentapp.util.showSnackBar
 
 class SubjectFragment : Fragment() {
 
@@ -45,7 +46,8 @@ class SubjectFragment : Fragment() {
         setupRecyclerView()
 
         val args = arguments
-        subjectId = args?.getInt("id")!!
+        subjectId = args?.getInt("subjectId")!!
+        Log.d("subjectId",subjectId.toString())
         subjectName = args.getString("subjectName")!!
 
 
@@ -76,10 +78,7 @@ class SubjectFragment : Fragment() {
                 viewModel.addTest(test)
             }
 
-
-
         }
-
 
 
         studentsToAddAdapter.setOnStudentAddClick {
@@ -99,7 +98,19 @@ class SubjectFragment : Fragment() {
 
       viewModel.getAllTestsFromSubject(subjectId).observe(viewLifecycleOwner){
           testAdapter.setList(it)
+
+          Log.d("setlist",it.toString())
+
       }
+
+        viewModel.getStudentsOfSubject(subjectId).observe(viewLifecycleOwner){
+
+            if(it[subjectId].students.isEmpty()){
+                showSnackBar(message = "radi pls")
+                Log.d("prazno",it.toString())
+            }else
+                Log.d("puno",it.toString())
+        }
 
 
 
@@ -122,7 +133,7 @@ class SubjectFragment : Fragment() {
 
         binding.testRecyclerView.apply {
             adapter = testAdapter
-            layoutManager = LinearLayoutManager(context,  LinearLayoutManager.VERTICAL, false)
+            layoutManager = LinearLayoutManager(context,  LinearLayoutManager.HORIZONTAL, false)
         }
 
     }

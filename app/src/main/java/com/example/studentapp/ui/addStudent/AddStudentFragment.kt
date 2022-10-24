@@ -1,5 +1,6 @@
 package com.example.studentapp.ui.addStudent
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -14,6 +15,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.util.*
 
 @AndroidEntryPoint
 class AddStudentFragment : Fragment() {
@@ -39,9 +41,26 @@ class AddStudentFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.apply {
-            btnAdd.setOnClickListener {
 
+
+        val c = Calendar.getInstance()
+        val year = c.get(Calendar.YEAR)
+        val month = c.get(Calendar.MONTH)
+        val day = c.get(Calendar.DAY_OF_MONTH)
+
+        binding.apply {
+
+            birthdayEditText.setOnClickListener {
+                val dpd = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { view, myear, mmonth, mdayOfMonth ->
+
+                    birthdayEditText.setText("" + myear + "-" + "${mmonth+1}" + "-" + mdayOfMonth)
+
+                },year, month, day)
+
+                dpd.show()
+            }
+
+            btnAdd.setOnClickListener {
                 val student = Student(
                     0,
                     nameEditText.text.toString(),

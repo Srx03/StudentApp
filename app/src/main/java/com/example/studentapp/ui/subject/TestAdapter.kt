@@ -2,26 +2,26 @@ package com.example.studentapp.ui.subject
 
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.studentapp.data.entity.Student
+
 import com.example.studentapp.data.entity.Test
-import com.example.studentapp.databinding.ItemStudentSearchBinding
-import com.example.studentapp.databinding.ItemStudentSubjectsAddBinding
-import com.example.studentapp.databinding.ItemStudentSubjectsBinding
+import com.example.studentapp.data.entity.relations.SubjectWithTests
+
 import com.example.studentapp.databinding.TestItemBinding
 import com.example.studentapp.util.formatDate
 
 
 class TestAdapter(): RecyclerView.Adapter<TestAdapter.TestViewHolder>() {
 
-    private var tests: List<Test>? = null
-    var onItemClick: ((Test) -> Unit)? = null
+    private var tests: List<SubjectWithTests>? = null
+    var onItemClick: ((SubjectWithTests) -> Unit)? = null
 
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setList(liveData: List<Test>){
+    fun setList(liveData: List<SubjectWithTests>){
         this.tests = liveData
         notifyDataSetChanged()
     }
@@ -36,9 +36,11 @@ class TestAdapter(): RecyclerView.Adapter<TestAdapter.TestViewHolder>() {
 
     override fun onBindViewHolder(holder: TestViewHolder, position: Int) {
 
-        holder.binding.tvTestName.text = tests!![position].name
-        holder.binding.tvDate.text = tests!![position].date
-        holder.binding.tvTime.text = tests!![position].time
+
+        holder.binding.tvTestName.text = tests!![position].tests[position].name
+        Log.d("daj mi nesto", tests!![position].tests[position].name)
+      holder.binding.tvDate.text = tests!![position].tests[position].date
+       holder.binding.tvTime.text = tests!![position].tests[position].time
 
         holder.itemView.setOnLongClickListener {
             onItemClick!!.invoke(tests!![position])
@@ -52,7 +54,7 @@ class TestAdapter(): RecyclerView.Adapter<TestAdapter.TestViewHolder>() {
           else tests!!.size
     }
 
-    fun setOnTestClick(test: (Test) -> Unit) {
+    fun setOnTestClick(test: (SubjectWithTests) -> Unit) {
         onItemClick = test
     }
 }

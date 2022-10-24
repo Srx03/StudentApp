@@ -2,6 +2,7 @@ package com.example.studentapp.ui.subject
 
 
 import android.annotation.SuppressLint
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -15,31 +16,32 @@ import com.example.studentapp.util.formatDate
 
 class AddedStudentsAdapter(): RecyclerView.Adapter<AddedStudentsAdapter. AddedStudentsViewHolder>() {
 
-    private var allStudent: List<Student>? = null
-    var onItemClick: ((Student) -> Unit)? = null
+    private var allStudent: List<SubjectWithStudents>? = null
+    var onItemClick: ((SubjectWithStudents) -> Unit)? = null
 
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setList(liveData: List<Student>){
+    fun setList(liveData: List<SubjectWithStudents>){
         this.allStudent = liveData
         notifyDataSetChanged()
     }
 
-    class  AddedStudentsViewHolder(val binding: ItemStudentSubjectsAddBinding): RecyclerView.ViewHolder(binding.root)
+    class  AddedStudentsViewHolder(val binding: ItemStudentSubjectsBinding): RecyclerView.ViewHolder(binding.root)
 
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): AddedStudentsViewHolder {
-        return AddedStudentsViewHolder(ItemStudentSubjectsAddBinding.inflate(LayoutInflater.from(parent.context)))
+        return AddedStudentsViewHolder(ItemStudentSubjectsBinding.inflate(LayoutInflater.from(parent.context)))
     }
 
     override fun onBindViewHolder(holder: AddedStudentsViewHolder, position: Int) {
 
-        holder.binding.tvStudentName.text = allStudent!![position].name + " " + allStudent!![position].surename
-        holder.binding.tvEmail.text = allStudent!![position].email
-        holder.binding.tvBirthday.formatDate(allStudent!![position].birthday)
+        holder.binding.tvStudentName.text = allStudent!![position].students[position].name + " " + allStudent!![position].students[position].surename
+        holder.binding.tvEmail.text = allStudent!![position].students[position].email
+        holder.binding.tvBirthday.formatDate(allStudent!![position].students[position].birthday)
+        Log.d("final",allStudent!![position].students[position].name)
 
-        holder.binding.btnAdd.setOnClickListener {
+        holder.binding.btnRemove.setOnClickListener {
             onItemClick!!.invoke(allStudent!![position])
         }
 
@@ -50,7 +52,7 @@ class AddedStudentsAdapter(): RecyclerView.Adapter<AddedStudentsAdapter. AddedSt
           else allStudent!!.size
     }
 
-    fun setOnStudentClick(student: (Student) -> Unit) {
+    fun setOnStudentDeleteClick(student: (SubjectWithStudents) -> Unit) {
         onItemClick = student
     }
 }

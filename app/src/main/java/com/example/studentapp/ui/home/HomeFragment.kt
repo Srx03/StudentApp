@@ -1,6 +1,7 @@
 package com.example.studentapp.ui.home
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -53,10 +54,12 @@ class HomeFragment : Fragment() {
             } else {
 
                 val subject = Subject(
-                    0,
+                    subjectId = 0,
                     binding.nameEditText.text.toString()
                 )
                 viewModel.addSubject(subject)
+
+                Log.d("radiiii",subject.toString())
             }
         }
 
@@ -64,6 +67,8 @@ class HomeFragment : Fragment() {
         viewModel.getAllSubjects().observe(viewLifecycleOwner){
 
             subjectAdapter.setList(it)
+
+            Log.d("subjectt",it.toString())
 
 
         }

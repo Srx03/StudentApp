@@ -202,7 +202,7 @@
                     android:id="@+id/dateEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
+                    android:inputType="date"
                     android:outlineAmbientShadowColor="@color/divider_2"
                     android:outlineSpotShadowColor="@color/divider_2"
                     android:textColor="@color/divider_2" />
@@ -271,13 +271,12 @@
             android:id="@+id/testRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_12sdp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_5sdp"
             android:orientation="horizontal"
             android:paddingHorizontal="@dimen/_7sdp"
-            android:layout_gravity="center_horizontal"
-            tools:listitem="@layout/test_item"/>
-
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/test_item" />
 
 
     </LinearLayout>

@@ -1,5 +1,6 @@
 package com.example.studentapp.ui.profile
 
+import android.app.DatePickerDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.example.studentapp.databinding.FragmentProfileBinding
 import com.example.studentapp.ui.addStudent.AddStudentViewModel
 import com.example.studentapp.util.showSnackBar
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import java.util.*
 
 class ProfileFragment :  BottomSheetDialogFragment() {
 
@@ -51,6 +53,12 @@ class ProfileFragment :  BottomSheetDialogFragment() {
 
         binding.apply {
 
+            val c = Calendar.getInstance()
+            val year = c.get(Calendar.YEAR)
+            val month = c.get(Calendar.MONTH)
+            val day = c.get(Calendar.DAY_OF_MONTH)
+
+
             btnClose.setOnClickListener {
                 dismiss()
             }
@@ -72,8 +80,8 @@ class ProfileFragment :  BottomSheetDialogFragment() {
             nameEditText.setText(name)
             surenameEditText.setText(surename)
             emailEditText.setText(email)
-            birthdayEditText.setText(phone)
-            phonelEditText.setText(birthday)
+            phonelEditText.setText(phone)
+            birthdayEditText.setText(birthday)
             addressEditText.setText(address)
             genderEditText.setText(gender)
             nationalityEditText.setText(nationality)
@@ -193,23 +201,14 @@ class ProfileFragment :  BottomSheetDialogFragment() {
 
 
             birthdayEditText.setOnClickListener {
-                selectWhatToEditLayout.isGone = true
-                selectedEditTextLayout.isGone = false
 
-                currentlyEditing.text = "Birthday"
+                val dpd = DatePickerDialog(requireContext(), DatePickerDialog.OnDateSetListener { view, myear, mmonth, mdayOfMonth ->
 
-                selectedEditText.text = birthdayEditText.text
+                    birthdayEditText.setText("" + myear + "-" + "${mmonth+1}" + "-" + mdayOfMonth)
 
-                btnSaveSelectedEditText.setOnClickListener {
-                    if (selectedEditText.text.isNullOrBlank())
-                        showSnackBar(message = "Please add birthday if you want to change it")
-                    else {
-                        birthdayEditText.text = selectedEditText.text
-                        selectWhatToEditLayout.isGone = false
-                        selectedEditTextLayout.isGone = true
-                    }
+                },year, month, day)
 
-                }
+                dpd.show()
 
             }
 
