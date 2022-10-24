@@ -28,7 +28,7 @@ class SubjectRepositoryImpl @Inject constructor(private val subjectDao: SubjectD
        subjectDao.insertStudentSubjectCrossRef(crossRef)
     }
 
-    override fun getStudetsOfSubject(id: Int): List<SubjectWithStudents> {
+    override fun getStudentsOfSubject(id: Int): LiveData<List<SubjectWithStudents>> {
         return subjectDao.getStudetsOfSubject(id)
     }
 

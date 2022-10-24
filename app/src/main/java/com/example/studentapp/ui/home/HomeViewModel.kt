@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.studentapp.data.entity.Subject
+import com.example.studentapp.data.entity.relations.StudentSubjectCrossRef
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -26,6 +27,7 @@ class HomeViewModel @Inject constructor (private val homeRepository: HomeReposit
         homeRepository.deleteSubject(id)
 
     }
+
 
 
 

@@ -44,6 +44,7 @@
 
 
         <ImageView
+            android:id="@+id/btnRemove"
             android:layout_width="@dimen/_45sdp"
             android:layout_height="@dimen/_45sdp"
             android:src="@drawable/ic_delete"

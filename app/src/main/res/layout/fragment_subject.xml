@@ -89,7 +89,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_15sdp"
-        android:visibility="visible"
+        android:visibility="gone"
         android:orientation="vertical">
 
         <EditText
@@ -145,7 +145,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_15sdp"
-        android:visibility="gone"
+        android:visibility="visible"
         android:orientation="vertical">
 
         <com.google.android.material.textfield.TextInputLayout
@@ -199,10 +199,10 @@
                 app:layout_constraintWidth_percent="0.45">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/nameEditText"
+                    android:id="@+id/dateEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text"
+                    android:inputType="date"
                     android:outlineAmbientShadowColor="@color/divider_2"
                     android:outlineSpotShadowColor="@color/divider_2"
                     android:textColor="@color/divider_2" />
@@ -227,7 +227,7 @@
                 app:layout_constraintWidth_percent="0.45">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/surnameEditText"
+                    android:id="@+id/timeEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text"
@@ -239,6 +239,20 @@
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAdd"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_50sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/btnbackground"
+            android:fontFamily="@font/opensansnormal"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_15sdp" />
 
 
 
@@ -254,15 +268,15 @@
             android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/testRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/_12sdp"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/_5sdp"
             android:orientation="horizontal"
             android:paddingHorizontal="@dimen/_7sdp"
-            android:layout_gravity="center_horizontal"
-            tools:listitem="@layout/test_item"/>
-
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:listitem="@layout/test_item" />
 
 
     </LinearLayout>

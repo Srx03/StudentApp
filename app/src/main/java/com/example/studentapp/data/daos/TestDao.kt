@@ -20,6 +20,7 @@ interface TestDao {
     @Query("SELECT * FROM test")
     fun getAllTests(): LiveData<List<Test>>
 
+    @Transaction
     @Query("SELECT * FROM test WHERE subjectId = :subjectId")
    fun getAllTestsFromSubject(subjectId: Int): LiveData<List<SubjectWithTests>>
 

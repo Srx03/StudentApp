@@ -25,7 +25,7 @@ interface SubjectDao {
 
     @Transaction
     @Query("SELECT * FROM subject WHERE subjectId = :id")
-    fun getStudetsOfSubject(id: Int): List<SubjectWithStudents>
+    fun getStudetsOfSubject(id: Int): LiveData<List<SubjectWithStudents>>
 
 
 

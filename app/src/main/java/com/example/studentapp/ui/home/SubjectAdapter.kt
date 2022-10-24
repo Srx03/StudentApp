@@ -14,6 +14,7 @@ class SubjectAdapter(): RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder>()
 
     private var allSubjects: List<Subject>? = null
     var onItemClick: ((Subject) -> Unit)? = null
+    var onHoldItemClick: ((Subject) -> Unit)? = null
 
 
     @SuppressLint("NotifyDataSetChanged")
@@ -36,8 +37,12 @@ class SubjectAdapter(): RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder>()
 
         holder.itemView.setOnLongClickListener {
             Log.d("testic",allSubjects!![position].toString())
-            onItemClick!!.invoke(allSubjects!![position])
+            onHoldItemClick!!.invoke(allSubjects!![position])
             true
+        }
+
+        holder.itemView.setOnClickListener {
+            onItemClick!!.invoke((allSubjects!![position]))
         }
 
     }
@@ -45,6 +50,10 @@ class SubjectAdapter(): RecyclerView.Adapter<SubjectAdapter.SubjectViewHolder>()
     override fun getItemCount(): Int {
         return if(allSubjects == null) 0
           else  allSubjects!!.size
+    }
+
+    fun setOnHoldSubjectClick(subject: (Subject) -> Unit) {
+        onHoldItemClick = subject
     }
 
     fun setOnSubjectClick(subject: (Subject) -> Unit) {
