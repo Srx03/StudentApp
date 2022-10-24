@@ -10,6 +10,7 @@ data class Test(
     var name: String,
     var date: String,
     var time: String,
-    var subjectId: Int
+    var subjectId: Int,
+    var subjectName: String
 
 )

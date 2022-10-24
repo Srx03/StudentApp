@@ -16,7 +16,7 @@ interface SubjectRepository {
 
     suspend fun  addStudentToSubject(crossRef: StudentSubjectCrossRef)
 
-    fun getStudetsOfSubject(id: Int): List<SubjectWithStudents>
+    fun getStudentsOfSubject(id: Int): LiveData<List<SubjectWithStudents>>
 
     fun getAllStudent(): LiveData<List<Student>>
 

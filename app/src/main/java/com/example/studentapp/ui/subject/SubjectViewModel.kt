@@ -15,7 +15,7 @@ import javax.inject.Inject
 class SubjectViewModel @Inject constructor(private val subjectRepository: SubjectRepository): ViewModel() {
 
 
-    fun getAllSubjects(subjectId: Int) = subjectRepository.getAllTestsFromSubject(subjectId)
+    fun getStudentsOfSubject(subjectId: Int) = subjectRepository.getStudentsOfSubject(subjectId)
 
     fun addTest(test: Test) = viewModelScope.launch {
         subjectRepository.addTest(test)

@@ -18,7 +18,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/tvStudentName"
+            android:id="@+id/tvTestName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/opensansbold"
@@ -38,7 +38,7 @@
             android:orientation="horizontal">
 
             <TextView
-                android:id="@+id/tvEmail"
+                android:id="@+id/tvDate"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="@dimen/_10sdp"
@@ -50,7 +50,7 @@
                 app:layout_constraintTop_toBottomOf="@id/tvStudentName" />
 
             <TextView
-                android:id="@+id/tvBirthday"
+                android:id="@+id/tvTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:layout_constraintTop_toBottomOf="@id/tvEmail"
