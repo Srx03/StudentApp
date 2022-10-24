@@ -3,6 +3,7 @@ package com.example.studentapp.ui.search
 import androidx.lifecycle.LiveData
 import com.example.studentapp.data.daos.StudentDao
 import com.example.studentapp.data.entity.Student
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class SearchRepositoryImpl @Inject constructor(private val studentDao: StudentDao):
@@ -15,4 +16,7 @@ class SearchRepositoryImpl @Inject constructor(private val studentDao: StudentDa
         return listOfAllStudents
     }
 
+    override fun searchForStudents(searchQuery: String): Flow<List<Student>>{
+        return studentDao.searchForStudents(searchQuery)
+    }
 }
