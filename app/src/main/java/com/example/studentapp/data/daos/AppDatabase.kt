@@ -8,7 +8,7 @@ import com.example.studentapp.data.entity.Test
 import com.example.studentapp.data.entity.relations.StudentSubjectCrossRef
 import com.example.studentapp.data.entity.relations.StudentTestCrossRef
 
-@Database(entities = [Subject::class, Student::class, Test::class, StudentSubjectCrossRef::class, StudentTestCrossRef::class], version = 3)
+@Database(entities = [Subject::class, Student::class, Test::class, StudentSubjectCrossRef::class, StudentTestCrossRef::class], version = 2)
 abstract class AppDatabase: RoomDatabase() {
 
     abstract fun subjectDao(): SubjectDao

@@ -85,6 +85,43 @@
 
 
     <LinearLayout
+        android:id="@+id/empty_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_170sdp"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:visibility="gone"
+        android:weightSum="5">
+
+        <ImageView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@drawable/ic_error"
+            app:tint="@color/main" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:fontFamily="@font/opensansbold"
+            android:gravity="center_horizontal"
+            android:text="Sorry cant find that result!"
+            android:textColor="@color/main"
+            android:textSize="@dimen/_14sdp" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/searchingProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_50sdp"
+        android:indeterminateTint="@color/main"
+        android:visibility="gone" />
+
+    <LinearLayout
         android:id="@+id/layoutSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -116,7 +153,7 @@
             tools:listitem="@layout/item_student_subjects_add" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/searchRecyclerView"
+            android:id="@+id/searchedRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_170sdp"
             android:layout_marginTop="@dimen/_6sdp"

@@ -26,6 +26,7 @@ class HomeFragment : Fragment() {
     private val  viewModel: HomeViewModel by activityViewModels()
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -54,7 +55,7 @@ class HomeFragment : Fragment() {
             } else {
 
                 val subject = Subject(
-                    subjectId = 0,
+                    subjectId = id,
                     binding.nameEditText.text.toString()
                 )
                 viewModel.addSubject(subject)

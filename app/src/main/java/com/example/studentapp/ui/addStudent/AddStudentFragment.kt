@@ -29,6 +29,8 @@ class AddStudentFragment : Fragment() {
     private var _binding: FragmentAddStudentBinding? = null
     private val binding get() = _binding!!
 
+
+
     private val  viewModel: AddStudentViewModel by activityViewModels()
 
     private lateinit var orderAdapter: OrderAdapter
@@ -82,6 +84,7 @@ class AddStudentFragment : Fragment() {
 
                     )
                 viewModel.addStudent(student)
+
             }
 
         }
@@ -183,6 +186,26 @@ class AddStudentFragment : Fragment() {
         binding.btnOrderGender.setOnClickListener {
 
             viewModel.getStudentsByGender(binding.genderOrderEditText.text.toString()).observe(viewLifecycleOwner){
+
+                orderAdapter.setList(it)
+
+            }
+
+        }
+
+        binding.btnOrderNationality.setOnClickListener {
+
+            viewModel.getStudentsByNationality(binding.nationalityOrderEditText.text.toString()).observe(viewLifecycleOwner){
+
+                orderAdapter.setList(it)
+
+            }
+
+        }
+
+        binding.btnOrderCitizenship.setOnClickListener {
+
+            viewModel.getStudentsByCitizenship(binding.citizenshipOrderEditText.text.toString()).observe(viewLifecycleOwner){
 
                 orderAdapter.setList(it)
 

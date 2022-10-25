@@ -12,6 +12,7 @@ import com.example.studentapp.data.entity.relations.SubjectWithStudents
 import com.example.studentapp.data.entity.relations.SubjectWithTests
 import com.example.studentapp.ui.home.HomeRepository
 import com.example.studentapp.ui.search.SearchRepository
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class SubjectRepositoryImpl @Inject constructor(private val subjectDao: SubjectDao, private val testDao: TestDao, private val studentDao: StudentDao): SubjectRepository {
@@ -38,5 +39,9 @@ class SubjectRepositoryImpl @Inject constructor(private val subjectDao: SubjectD
 
     override fun getAllTestsFromSubject(subjectId: Int): LiveData<List<SubjectWithTests>> {
         return testDao.getAllTestsFromSubject(subjectId)
+    }
+
+    override fun searchForStudents(searchQuery: String): Flow<List<Student>> {
+        return studentDao.searchForStudents(searchQuery)
     }
 }

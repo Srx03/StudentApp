@@ -12,6 +12,8 @@ interface AddStudentRepository {
 
     fun getStudentsByNationality(nationality: String): LiveData<List<Student>>
 
+    fun getStudentsByCitizenship(citizenship: String): LiveData<List<Student>>
+
     fun getStudentsByAge(): LiveData<List<Student>>
 
 }

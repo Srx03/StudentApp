@@ -15,8 +15,6 @@ class SearchViewModel @Inject constructor( private val searchRepository: SearchR
     private var getAllStudents: LiveData<List<Student>> = searchRepository.getAllStudent()
 
 
-
-
     fun getAllStudents() =  getAllStudents
 
     fun searchForStudents(searchQuery: String):  LiveData<List<Student>>{
