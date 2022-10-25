@@ -115,7 +115,7 @@ class SubjectFragment : Fragment() {
 
                 Log.d("puno",it.toString())
 
-            addedStudentsAdapter.setList(it)
+
         }
 
 
@@ -144,7 +144,10 @@ class SubjectFragment : Fragment() {
 
                                 Log.d("top1", it.toString())
 
-                            }else binding.emptySearch.isGone = false
+                            }else {
+                                binding.emptySearch.isGone = false
+                                searchingProgressBar.isGone = true
+                            }
 
                         }
 
@@ -162,6 +165,11 @@ class SubjectFragment : Fragment() {
                     }
                 }
             }
+        }
+
+        testAdapter.setOnTestClick {
+            viewModel.deleteTest(it.tests[subjectId].testId)
+            Log.d("HAJDE",it.tests[subjectId].testId.toString())
         }
 
     }

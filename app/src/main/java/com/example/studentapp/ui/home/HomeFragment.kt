@@ -55,7 +55,7 @@ class HomeFragment : Fragment() {
             } else {
 
                 val subject = Subject(
-                    subjectId = id,
+                    subjectId = 0,
                     binding.nameEditText.text.toString()
                 )
                 viewModel.addSubject(subject)
