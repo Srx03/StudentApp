@@ -15,7 +15,7 @@ interface TestDao {
     suspend fun addTest(test: Test?)
 
     @Query("DELETE FROM test WHERE testId = :testId")
-    suspend fun  deleteTest(testId: Int?)
+    suspend fun  deleteTest(testId: Int)
 
     @Query("SELECT * FROM test")
     fun getAllTests(): LiveData<List<Test>>

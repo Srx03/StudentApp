@@ -168,8 +168,8 @@ class SubjectFragment : Fragment() {
         }
 
         testAdapter.setOnTestClick {
-            viewModel.deleteTest(it.tests[subjectId].testId)
-            Log.d("HAJDE",it.tests[subjectId].testId.toString())
+            viewModel.deleteTest(it)
+            Log.d("HAJDE",it.toString())
         }
 
     }

@@ -17,7 +17,7 @@ import com.example.studentapp.util.formatDate
 class TestAdapter(): RecyclerView.Adapter<TestAdapter.TestViewHolder>() {
 
     private var tests: List<SubjectWithTests>? = null
-    var onItemClick: ((SubjectWithTests) -> Unit)? = null
+    var onItemClick: ((Int) -> Unit)? = null
 
 
     @SuppressLint("NotifyDataSetChanged")
@@ -38,13 +38,12 @@ class TestAdapter(): RecyclerView.Adapter<TestAdapter.TestViewHolder>() {
 
 
         holder.binding.tvTestName.text = tests!![position].tests[position].name
-        Log.d("daj mi nesto", tests!![position].tests[position].name)
       holder.binding.tvDate.text = tests!![position].tests[position].date
        holder.binding.tvTime.text = tests!![position].tests[position].time
 
-        holder.itemView.setOnLongClickListener {
-            onItemClick!!.invoke(tests!![position])
-            true
+        holder.itemView.setOnClickListener {
+            Log.d("testt", tests!![position].tests[position].testId.toString())
+            onItemClick!!.invoke(tests!![position].tests[position].testId)
         }
 
     }
@@ -54,7 +53,7 @@ class TestAdapter(): RecyclerView.Adapter<TestAdapter.TestViewHolder>() {
           else tests!!.size
     }
 
-    fun setOnTestClick(test: (SubjectWithTests) -> Unit) {
+    fun setOnTestClick(test: (Int) -> Unit) {
         onItemClick = test
     }
 }

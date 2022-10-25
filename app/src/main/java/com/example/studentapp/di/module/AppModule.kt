@@ -5,7 +5,7 @@ import androidx.room.Room
 import com.example.studentapp.data.daos.StudentDao
 import com.example.studentapp.data.daos.SubjectDao
 import com.example.studentapp.data.daos.TestDao
-import com.example.studentapp.data.daos.AppDatabase
+import com.example.studentapp.data.AppDatabase
 import com.example.studentapp.ui.addStudent.AddStudentRepository
 import com.example.studentapp.ui.addStudent.AddStudentRepositoryImpl
 import com.example.studentapp.ui.home.HomeRepository
