@@ -24,8 +24,9 @@ class AddStudentViewModel @Inject constructor(private val addStudentRepository: 
 
     fun getStudentsByGender(gender: String) = addStudentRepository.getStudentsByGender(gender)
 
-
     fun getStudentsByNationality(nationality: String) =  addStudentRepository.getStudentsByNationality(nationality)
+
+    fun getStudentsByCitizenship(citizenship: String) =  addStudentRepository.getStudentsByNationality(citizenship)
 
     fun getStudentsByAge() = addStudentRepository.getStudentsByAge()
 

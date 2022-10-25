@@ -23,4 +23,8 @@ class AddStudentRepositoryImpl @Inject constructor(private val studentDao: Stude
     override fun getStudentsByAge(): LiveData<List<Student>> {
         return studentDao.getStudentsByAge()
     }
+
+    override fun getStudentsByCitizenship(citizenship: String): LiveData<List<Student>> {
+        return  studentDao.getStudentsByCitizenship(citizenship)
+    }
 }

@@ -1,7 +1,9 @@
 package com.example.studentapp.ui.subject
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
 import com.example.studentapp.data.entity.Student
 import com.example.studentapp.data.entity.Test
@@ -33,7 +35,12 @@ class SubjectViewModel @Inject constructor(private val subjectRepository: Subjec
 
     fun getAllTestsFromSubject(subjectId: Int) = subjectRepository.getAllTestsFromSubject(subjectId)
 
+    fun searchForStudents(searchQuery: String):  LiveData<List<Student>>{
 
+        Log.d("topic", subjectRepository.searchForStudents(searchQuery).asLiveData().toString())
+
+        return subjectRepository.searchForStudents(searchQuery).asLiveData()
+    }
 
 
 }

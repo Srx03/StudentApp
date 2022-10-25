@@ -68,14 +68,12 @@ class SearchFragment : Fragment() {
                 searchQuery = it.trim().toString()
                 binding.apply {
                     if (it.isNotEmpty() && it.isNotBlank()) {
-                        // Show searching progress bar
                         tvPresenting.text = "Presenting searched students"
                         searchingProgressBar.isGone = false
                         emptySearch.isGone = true
                         allRecyclerView.isGone = true
-                        searchRecyclerView.isGone = true // Make it visible on getting results
+                        searchRecyclerView.isGone = true
                         performSearch(it.trim().toString())
-
                         viewModel.searchForStudents(searchQuery!!).observe(viewLifecycleOwner){
 
                             Log.d("top", it.toString())
@@ -101,7 +99,6 @@ class SearchFragment : Fragment() {
 
                         tvPresenting.text = "Presenting all students"
 
-                        // also cancel the job
                         job?.cancel()
                     }
                 }

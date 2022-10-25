@@ -26,6 +26,7 @@ class HomeFragment : Fragment() {
     private val  viewModel: HomeViewModel by activityViewModels()
 
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

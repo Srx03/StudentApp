@@ -7,6 +7,7 @@ import com.example.studentapp.data.entity.Test
 import com.example.studentapp.data.entity.relations.StudentSubjectCrossRef
 import com.example.studentapp.data.entity.relations.SubjectWithStudents
 import com.example.studentapp.data.entity.relations.SubjectWithTests
+import kotlinx.coroutines.flow.Flow
 
 interface SubjectRepository {
 
@@ -21,6 +22,8 @@ interface SubjectRepository {
     fun getAllStudent(): LiveData<List<Student>>
 
     fun getAllTestsFromSubject(subjectId: Int): LiveData<List<SubjectWithTests>>
+
+    fun searchForStudents(searchQuery: String): Flow<List<Student>>
 
 
 }

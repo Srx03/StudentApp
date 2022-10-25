@@ -84,6 +84,57 @@
     </LinearLayout>
 
 
+    <EditText
+        android:id="@+id/etSearch"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/search_box_background"
+        android:hint="Search for student..."
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:visibility="visible"
+        android:textColor="@color/divider" />
+
+    <LinearLayout
+        android:id="@+id/empty_search"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_170sdp"
+        android:gravity="center"
+        android:orientation="vertical"
+
+        android:visibility="gone"
+        android:weightSum="5">
+
+        <ImageView
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:src="@drawable/ic_error"
+            app:tint="@color/main" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_18sdp"
+            android:fontFamily="@font/opensansbold"
+            android:gravity="center_horizontal"
+            android:text="Sorry cant find that result!"
+            android:textColor="@color/main"
+            android:textSize="@dimen/_14sdp" />
+
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/searchingProgressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:indeterminateTint="@color/main"
+        android:visibility="gone" />
+
     <LinearLayout
         android:id="@+id/layoutSearch"
         android:layout_width="match_parent"
@@ -92,18 +143,6 @@
         android:visibility="visible"
         android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/etSearch"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginStart="@dimen/_15sdp"
-            android:layout_marginEnd="@dimen/_15sdp"
-            android:background="@drawable/search_box_background"
-            android:hint="Search for student..."
-            android:paddingStart="15dp"
-            android:paddingEnd="15dp"
-            android:visibility="visible"
-            android:textColor="@color/divider" />
 
 
         <androidx.recyclerview.widget.RecyclerView
@@ -116,7 +155,7 @@
             tools:listitem="@layout/item_student_subjects_add" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/searchRecyclerView"
+            android:id="@+id/searchedRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="@dimen/_170sdp"
             android:layout_marginTop="@dimen/_6sdp"
@@ -124,18 +163,7 @@
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:listitem="@layout/item_student_subjects_add" />
 
-        <TextView
-            android:id="@+id/emptyStudentsList"
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/_138sdp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="@dimen/_8sdp"
-            android:fontFamily="@font/opensansnormal"
-            android:gravity="center"
-            android:text="Add students to subject"
-            android:textColor="@color/black"
-            android:textSize="@dimen/_25sdp"
-            android:visibility="gone" />
+
 
 
     </LinearLayout>

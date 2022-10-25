@@ -29,6 +29,10 @@ interface StudentDao {
     @Query("SELECT * FROM student WHERE nationality IN (:nationality)")
     fun getStudentsByNationality(nationality: String): LiveData<List<Student>>
 
+    @Query("SELECT * FROM student WHERE citizenship IN (:citizenship)")
+    fun getStudentsByCitizenship(citizenship: String): LiveData<List<Student>>
+
+
     @Query("SELECT * FROM student ORDER BY birthday DESC")
     fun getStudentsByAge(): LiveData<List<Student>>
 
