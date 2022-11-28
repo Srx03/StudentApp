@@ -82,24 +82,18 @@ class SubjectFragment : Fragment() {
                     subjectId,
                     subjectName
                 )
-
                 viewModel.addTest(test)
             }
-
         }
-
-
         studentsToAddAdapter.setOnStudentAddClick {
 
             val crossRef = StudentSubjectCrossRef(
                 it.studentId,
                 subjectId
             )
-
             viewModel.addStudentToSubject(crossRef)
             Log.d("studentiadd",it.toString())
         }
-
         viewModel.getAllStudent().observe(viewLifecycleOwner){
             studentsToAddAdapter.setList(it)
         }
@@ -107,14 +101,15 @@ class SubjectFragment : Fragment() {
       viewModel.getAllTestsFromSubject(subjectId).observe(viewLifecycleOwner){
           testAdapter.setList(it)
 
-          Log.d("setlist",it.toString())
+
 
       }
-
         viewModel.getStudentsOfSubject(subjectId).observe(viewLifecycleOwner){
+            var idHelper: Int = subjectId
+            Log.d("StudensInSubject",it.students.toString())
+            Log.d("StudensInSubject1",idHelper.toString())
 
-                Log.d("puno",it.toString())
-
+            addedStudentsAdapter.setList(it.students)
 
         }
 
