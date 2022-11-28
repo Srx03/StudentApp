@@ -16,14 +16,16 @@ import com.example.studentapp.util.formatDate
 
 class AddedStudentsAdapter(): RecyclerView.Adapter<AddedStudentsAdapter. AddedStudentsViewHolder>() {
 
-    private var allStudent: List<SubjectWithStudents>? = null
-    var onItemClick: ((SubjectWithStudents) -> Unit)? = null
+    private var allStudent: List<Student>? = null
+    var onItemClick: ((Student) -> Unit)? = null
 
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setList(liveData: List<SubjectWithStudents>){
+    fun setList(liveData: List<Student>){
         this.allStudent = liveData
         notifyDataSetChanged()
+
+
     }
 
     class  AddedStudentsViewHolder(val binding: ItemStudentSubjectsBinding): RecyclerView.ViewHolder(binding.root)
@@ -36,10 +38,12 @@ class AddedStudentsAdapter(): RecyclerView.Adapter<AddedStudentsAdapter. AddedSt
 
     override fun onBindViewHolder(holder: AddedStudentsViewHolder, position: Int) {
 
-        holder.binding.tvStudentName.text = allStudent!![position].students[position].name + " " + allStudent!![position].students[position].surename
-        holder.binding.tvEmail.text = allStudent!![position].students[position].email
-        holder.binding.tvBirthday.formatDate(allStudent!![position].students[position].birthday)
-        Log.d("final",allStudent!![position].students[position].name)
+
+
+        holder.binding.tvStudentName.text = allStudent!![position].name + " " + allStudent!![position].surename
+        holder.binding.tvEmail.text = allStudent!![position].email
+        holder.binding.tvBirthday.formatDate(allStudent!![position].birthday)
+        Log.d("final",allStudent!![position].name)
 
         holder.binding.btnRemove.setOnClickListener {
             onItemClick!!.invoke(allStudent!![position])
@@ -52,7 +56,7 @@ class AddedStudentsAdapter(): RecyclerView.Adapter<AddedStudentsAdapter. AddedSt
           else allStudent!!.size
     }
 
-    fun setOnStudentDeleteClick(student: (SubjectWithStudents) -> Unit) {
+    fun setOnStudentDeleteClick(student: (Student) -> Unit) {
         onItemClick = student
     }
 }
